@@ -1,5 +1,5 @@
-import AuthenticatedApp from './components/AuthenticatedApp';
-import UnauthenticatedApp from './components/UnauthenticatedApp';
+// import AuthenticatedApp from './components/AuthenticatedApp';
+// import UnauthenticatedApp from './components/UnauthenticatedApp';
 import { useGlobalContext } from "./context/GlobalContext"
 import './App.css';
 import React, { useState } from "react";
@@ -57,7 +57,7 @@ function App() {
           <>
             <Navbar />
             <Switch>
-              <Route exact path='/' component={HomePage} />
+              <Route exact path='/' component={Home} />
               <Route exact path='/adoption-page' component={AdoptionPage} />
               <Route exact path='/human-profile' component={HumanProfile} />
               <Route exact path='/pet-profile' component={PetProfile} />
