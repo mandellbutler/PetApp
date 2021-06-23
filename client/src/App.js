@@ -57,7 +57,7 @@ function App() {
           <>
             <Navbar />
             <Switch>
-              <Route exact path='/' component={HomePage} />
+              <Route exact path='/' component={Home} />
               <Route exact path='/adoption-page' component={AdoptionPage} />
               <Route exact path='/human-profile' component={HumanProfile} />
               <Route exact path='/pet-profile' component={PetProfile} />

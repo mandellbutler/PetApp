@@ -16,7 +16,7 @@ const reducer = (state, action) => {
         loggedIn: true
       }
     default:
-      return state,
+      return state
   }
 }
 //creating a custom provider
