@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../context/GlobalContext"
+import { LOGIN } from "../context/actions"
 
 const UnauthenticatedApp = () => {
   const [state, dispatch] = useGlobalContext();
@@ -21,3 +22,5 @@ const UnauthenticatedApp = () => {
     </>
   )
 }
+
+export default UnauthenticatedApp();
