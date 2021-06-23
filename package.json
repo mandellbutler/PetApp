@@ -16,5 +16,11 @@
   "devDependencies": {
     "concurrently": "^6.2.0",
     "react-router-dom": "^5.2.0"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "graphql": "^15.5.1",
+    "materialize-css": "^1.0.0",
+    "react-materialize": "^3.9.8"
   }
 }
