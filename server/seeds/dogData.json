@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Fido",
+    "breed": "Boxer",
+    "location": "New York",
+    "age": 3 
+  },
+  {
+    "name": "Charlie",
+    "breed": "Standard Poodle",
+    "location": "Chicago",
+    "age": 5 
+  },
+  {
+    "name": "Jeff",
+    "breed": "Siberian Huskey",
+    "location": "Seattle",
+    "age": 1
+  },
+  {
+    "name": "Barktholomew",
+    "breed": "English Bulldog",
+    "location": "Los Angeles",
+    "age": 8
+  }
+]
