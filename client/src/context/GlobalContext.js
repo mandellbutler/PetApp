@@ -1,5 +1,9 @@
 import React, { useContext, createContext, useReducer } from "react";
-import { LOGIN } from "./actions";
+import {
+  LOGIN,
+  LOGOUT
+} from "./actions";
+
 
 //creating a context
 const GlobalContext = createContext();
