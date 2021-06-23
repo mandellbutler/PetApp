@@ -1,4 +1,8 @@
-import React from "react";
+import AuthenticatedApp from './components/AuthenticatedApp';
+import UnauthenticatedApp from './components/UnauthenticatedApp';
+import { GlobalProvider } from "./context/GlobalContext"
+import './App.css';
+import React,{ useState } from "react";
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -22,8 +26,18 @@ const client = new ApolloClient({
   uri: '/graphql'
 });
 
+
+
+
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const login = () => setLoggedIn(true);
+
+  const logout = () => setLoggedIn(false);
+
   return (
+
     <ApolloProvider client={client}>
         <Router>
           <>
@@ -39,6 +53,7 @@ function App() {
           </>
         </Router>
     </ApolloProvider>
+
   );
 }
 
