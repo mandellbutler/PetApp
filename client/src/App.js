@@ -1,6 +1,6 @@
-import AuthenticatedApp from './components/AuthenticatedApp';
-import UnauthenticatedApp from './components/UnauthenticatedApp';
-import { GlobalProvider } from "./context/GlobalContext"
+// import AuthenticatedApp from './components/AuthenticatedApp';
+// import UnauthenticatedApp from './components/UnauthenticatedApp';
+// import { GlobalProvider } from "./context/GlobalContext"
 import './App.css';
 import React,{ useState } from "react";
 import { ApolloProvider } from '@apollo/react-hooks';
