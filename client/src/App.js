@@ -38,7 +38,7 @@ function App() {
     <ApolloProvider client={client}>
       {state.token ? (
         <Router>
-          
+
           <Navbar />
           <Switch>
             <Route exact path='/'>
@@ -50,26 +50,12 @@ function App() {
             <Route exact path='/search' component={Search} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
-          
+
         </Router>
       ) : (
-        <Router>
-          <>
-            <Navbar />
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/adoption-page' component={AdoptionPage} />
-              <Route exact path='/human-profile' component={HumanProfile} />
-              <Route exact path='/pet-profile' component={PetProfile} />
-              <Route exact path='/search' component={Search} />
-              <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-            </Switch>
-          </>
-        </Router>
+        UnauthenticatedApp
       )}
-
     </ApolloProvider>
-
   );
 }
 
