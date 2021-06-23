@@ -1,8 +1,8 @@
-// import AuthenticatedApp from './components/AuthenticatedApp';
-// import UnauthenticatedApp from './components/UnauthenticatedApp';
-// import { GlobalProvider } from "./context/GlobalContext"
+import AuthenticatedApp from './components/AuthenticatedApp';
+import UnauthenticatedApp from './components/UnauthenticatedApp';
+import { useGlobalContext } from "./context/GlobalContext"
 import './App.css';
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -30,15 +30,13 @@ const client = new ApolloClient({
 
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [state, dispatch] = useGlobalContext();
 
-  const login = () => setLoggedIn(true);
-
-  const logout = () => setLoggedIn(false);
 
   return (
 
     <ApolloProvider client={client}>
+      {state.token ? (
         <Router>
           <>
             <Navbar />
@@ -52,6 +50,22 @@ function App() {
             </Switch>
           </>
         </Router>
+      ) : (
+        <Router>
+          <>
+            <Navbar />
+            <Switch>
+              <Route exact path='/' component={HomePage} />
+              <Route exact path='/adoption-page' component={AdoptionPage} />
+              <Route exact path='/human-profile' component={HumanProfile} />
+              <Route exact path='/pet-profile' component={PetProfile} />
+              <Route exact path='/search' component={Search} />
+              <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+            </Switch>
+          </>
+        </Router>
+      )}
+
     </ApolloProvider>
 
   );
