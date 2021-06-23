@@ -10,6 +10,6 @@ db.once('open', async () => {
 
   const dogs = await Dog.insertMany(dogData);
   const human = await Human.insertMany(humanData);
-  const professors = await Professor.insertMany(professorData);
 
+  process.exit(0)
 })
