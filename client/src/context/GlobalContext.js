@@ -1,4 +1,5 @@
 import React, { useContext, createContext, useReducer } from "react";
+import { LOGIN } from "./actions";
 
 //creating a context
 const GlobalContext = createContext();
@@ -9,8 +10,13 @@ const { Provider } = GlobalContext;
 const reducer = (state, action) => {
   switch (action.type) {
     //add actions
+    case LOGIN:
+      return {
+        ...state,
+        loggedIn: true
+      }
     default:
-      return state
+      return state,
   }
 }
 //creating a custom provider
