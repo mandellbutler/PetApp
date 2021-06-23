@@ -6,16 +6,16 @@ const resolvers = {
       return await Dog.find({}).populate('dogs')
     },
     humans: async () => {
-      return await Human.find({}).poopulate('humans')
+      return await Human.find({}).populate('humans')
     }
   },
 
   Mutation: {
-    addDog: async (parent, args) => {
-      
+    addDog: async (parent, { name, breed, location, age }) => {
+      return await Dog.create({ name, breed, location, age })
     },
-    addHuman: async (parent, args) => {
-
+    addHuman: async (parent, { name, location }) => {
+      return await Human.create({ name, location })
     }
   }
 }

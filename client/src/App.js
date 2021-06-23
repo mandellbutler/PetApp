@@ -56,7 +56,6 @@ function App() {
         UnauthenticatedApp
       )}
     </ApolloProvider>
-
   );
 }
 
