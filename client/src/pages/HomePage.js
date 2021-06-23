@@ -1,14 +1,14 @@
 import React from "react";
 import 'materialize-css';
 import {Card, Row, Col } from 'react-materialize';
-import homedog from "../public/homedog.png";
+import homedog from "../assets/homedog.png";
 
 
 const Home = () =>{
   return (
 
      
-          <Row>
+<Row>
     <Col s={12} m={7}>
       <Card>
         <img src={homedog} alt="dog" />
