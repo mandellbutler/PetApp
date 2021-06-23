@@ -1,10 +1,18 @@
 import { useGlobalContext } from "../context/GlobalContext"
 import { LOGIN } from "../context/actions"
+<<<<<<< HEAD
 import AdoptionPage from "./pages/AdoptionPage";
 import Home from "./pages/HomePage";
 import HumanProfile from "./pages/HumanProfile";
 import PetProfile from "./pages/PetProfile";
 import Search from "./pages/Search";
+=======
+import AdoptionPage from "../pages/AdoptionPage";
+import Home from "../pages/HomePage";
+import HumanProfile from "../pages/HumanProfile";
+import PetProfile from "../pages/PetProfile";
+import Search from "../pages/Search";
+>>>>>>> main
 import Navbar from './NavBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
