@@ -1,12 +1,12 @@
 import { useGlobalContext } from "../context/GlobalContext"
 import { LOGOUT } from "../context/actions"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import AdoptionPage from "./pages/AdoptionPage";
-import Home from "./pages/HomePage";
-import HumanProfile from "./pages/HumanProfile";
-import PetProfile from "./pages/PetProfile";
-import Search from "./pages/Search";
-import Navbar from './components/NavBar';
+import AdoptionPage from "../pages/AdoptionPage";
+import Home from "../pages/HomePage";
+import HumanProfile from "../pages/HumanProfile";
+import PetProfile from "../pages/PetProfile";
+import Search from "../pages/Search";
+import Navbar from './NavBar';
 
 const AuthenticatedApp = () => {
   const [state, dispatch] = useGlobalContext();
