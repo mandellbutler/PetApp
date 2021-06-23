@@ -2,14 +2,13 @@
   "name": "PetApp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm run build",
-    "start": "cd server && npm start",
+    "start": "node server/server.js",
     "install": "cd client && npm install && ../server && npm install",
-    "develop": "concurrently \"cd client && npm start\" \"cd server && npm run watch\"",
-    "watch": "nodemon server.js"
+    "develop": "concurrently \"cd client && npm start\" \"cd server && npm run watch\""
   },
   "keywords": [],
   "author": "",
