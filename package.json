@@ -8,18 +8,14 @@
     "build": "cd client && npm run build",
     "start": "node server/server.js",
     "install": "cd client && npm install && ../server && npm install",
-    "develop": "concurrently \"cd client && npm start\" \"cd server && npm run watch\""
+    "develop": "concurrently \"cd client && npm start\" \"cd server && npm run watch\"",
+    "seed": "cd server && node seeds/seed.js"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^6.2.0",
-    "react-router-dom": "^5.2.0"
-  },
-  "dependencies": {
-    "apollo-boost": "^0.4.9",
-    "express": "^4.17.1",
-    "graphql": "^15.5.1"
+    "concurrently": "^6.2.0"
   }
 }
