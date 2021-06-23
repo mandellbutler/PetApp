@@ -6,7 +6,7 @@ import Home from "./pages/HomePage";
 import HumanProfile from "./pages/HumanProfile";
 import PetProfile from "./pages/PetProfile";
 import Search from "./pages/Search";
-import Navbar from './components/NavBar';
+import Navbar from './NavBar';
 
 const AuthenticatedApp = () => {
   const [state, dispatch] = useGlobalContext();

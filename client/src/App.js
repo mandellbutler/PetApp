@@ -1,5 +1,5 @@
-// import AuthenticatedApp from './components/AuthenticatedApp';
-// import UnauthenticatedApp from './components/UnauthenticatedApp';
+import AuthenticatedApp from './components/AuthenticatedApp';
+import UnauthenticatedApp from './components/UnauthenticatedApp';
 import { useGlobalContext } from "./context/GlobalContext"
 import './App.css';
 import React, { useState } from "react";
