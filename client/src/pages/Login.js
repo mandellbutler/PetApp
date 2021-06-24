@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from '../context/GlobalContext';
+import { LOGIN } from "../context/actions"
 
 function Login() {
   const [state, dispatch] = useGlobalContext();
@@ -18,10 +19,10 @@ function Login() {
           </div>
           <div>
             <label>Password:</label>
-            <input></input>
+            <input type="password"></input>
           </div>
           <div>
-            <button onClick={() => dispatch({ type: 'LOGIN' })}>Submit</button>
+            <button onClick={() => dispatch({ type: LOGIN })}>Submit</button>
           </div>
         </form>
       </section>
@@ -34,7 +35,7 @@ function Login() {
           </div>
           <div>
             <label>Password:</label>
-            <input></input>
+            <input type="password"></input>
           </div>
           <div>
             <button onClick={() => dispatch({ type: 'LOGIN' })}>Login</button>

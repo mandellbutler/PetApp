@@ -13,6 +13,13 @@ const typeDefs = gql`
     _id: ID
     name: String
     location: String
+    email: String
+    password: String
+  }
+
+  type Auth {
+    token: ID!
+    human: Human
   }
   
   type Query {
@@ -22,7 +29,8 @@ const typeDefs = gql`
 
   type Mutation {
     addDog(name: String!, breed: String!, location: String!, age: Int!): Dog
-    addHuman(name: String!, location: String!): Human
+    addHuman(name: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
   }`
 
 module.exports = typeDefs
