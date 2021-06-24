@@ -1,6 +1,10 @@
 import React from "react";
+import { useGlobalContext } from '../context/GlobalContext';
+
+
 
 function AdoptionPage() {
+  const [state, dispatch] = useGlobalContext();
   return (
     <div>
       <form action="/action_page.php"/>
@@ -12,7 +16,7 @@ function AdoptionPage() {
         <input type="text" id="address" name="address"/><br></br>
         <label for="email">Email:</label><br></br>
         <input type="text" id="email" name="email"/><br></br>
-        <input type="submit" value="Submit"/>
+        <button onClick={() => dispatch({ type: 'ADOPTSUBMIT' })}>Submit</button>
     </div>
       
   );

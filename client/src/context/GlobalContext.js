@@ -1,7 +1,8 @@
 import React, { useContext, createContext, useReducer } from "react";
 import {
   LOGIN,
-  LOGOUT
+  LOGOUT,
+  ADOPTSUBMIT
 } from "./actions";
 
 
@@ -23,6 +24,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         loggedIn: false
+      }
+    case ADOPTSUBMIT:
+      return {
+        ...state, 
+        submitted: true
       }
     default:
       return state
