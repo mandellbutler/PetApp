@@ -5,6 +5,7 @@ import Home from "../pages/HomePage";
 import HumanProfile from "../pages/HumanProfile";
 import PetProfile from "../pages/PetProfile";
 import Search from "../pages/Search";
+import Login from "../pages/Login";
 import Navbar from './NavBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ const UnauthenticatedApp = () => {
             <Route exact path='/human-profile' component={HumanProfile} />
             <Route exact path='/pet-profile' component={PetProfile} />
             <Route exact path='/search' component={Search} />
+            <Route exact path='/login' component={Login} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </>
