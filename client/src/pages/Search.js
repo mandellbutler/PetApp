@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from '../context/GlobalContext';
 
-function SearchPage() {
+function Search() {
   const [state, dispatch] = useGlobalContext();
   return (
     <div>
@@ -11,9 +11,9 @@ function SearchPage() {
         <input type="text" id="location" name="location"/><br></br>
         <label for="breed">Breed:</label><br></br>
         <input type="text" id="breed" name="breed"/><br></br>
-        <button>Fetch Friend!</button>
+        <button>Fetch Friends!</button>
     </div>
   )
 }
 
-export default SearchPage
+export default Search
