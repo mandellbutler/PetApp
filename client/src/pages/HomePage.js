@@ -1,6 +1,6 @@
 import React from "react";
 import 'materialize-css';
-import {Card, Row, Col } from 'react-materialize';
+import {Row, Col } from 'react-materialize';
 import homedog from "../assets/homedog.png";
 
 
