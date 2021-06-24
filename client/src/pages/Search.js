@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from '../context/GlobalContext';
 
-function SearchPage() {
+function Search() {
   const [state, dispatch] = useGlobalContext();
   return (
     <div>
@@ -16,4 +16,4 @@ function SearchPage() {
   )
 }
 
-export default SearchPage
+export default Search
