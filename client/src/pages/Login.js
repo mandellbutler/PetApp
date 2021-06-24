@@ -21,7 +21,7 @@ function Login() {
             <input></input>
           </div>
           <div>
-            <button onClick={() => dispatch({ type: 'LOGIN' })}>Sumbit</button>
+            <button onClick={() => dispatch({ type: 'LOGIN' })}>Submit</button>
           </div>
         </form>
       </section>
