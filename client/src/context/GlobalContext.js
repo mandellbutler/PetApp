@@ -1,7 +1,8 @@
 import React, { useContext, createContext, useReducer } from "react";
 import {
   LOGIN,
-  LOGOUT
+  LOGOUT,
+  ADOPTSUBMIT
 } from "./actions";
 
 
