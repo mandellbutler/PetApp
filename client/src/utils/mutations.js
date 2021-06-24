@@ -11,3 +11,12 @@ export const ADD_DOGS = gql`
     }
   }
 `;
+
+export const ADD_HUMANS = gql`
+mutation addHuman(name: String!, location: String!): Human {
+  addHuman(name: $name, location: $location) {
+    _id
+    name
+    location
+  }
+}`

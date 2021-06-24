@@ -5,11 +5,11 @@ import {Row, Col, Card} from 'react-materialize';
 
 // import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { ADD_DOGS } from "../src/utils/queries";
+import { QUERY_DOGS } from "../utils/queries";
 
 const SavedPets = () => {
   
-  const { data } = useQuery(ADD_DOGS);
+  const { data } = useQuery(QUERY_DOGS);
 //   const userData = data?.me || {};
 
 
@@ -27,7 +27,9 @@ const SavedPets = () => {
           <span className="card-title">{dog.name}</span>
         </div>
         <div className="card-content">
-          <p>{dog.location}</p>
+            <h3>My name is {dog.name}, welcome to me profile!</h3>
+            <p>Breed:{dog.breed}</p>
+          <p>Location:{dog.location}</p>
         </div>
         <div className="card-action">
           {/* <a href="#">This is a link</a> */}

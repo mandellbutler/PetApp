@@ -5,8 +5,8 @@ import {Row, Col, Card } from 'react-materialize';
 
 // import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { QUERY_HUMANS } from "../src/utils/queries";
-import { QUERY_DOGS } from "../src/utils/queries";
+import { QUERY_HUMANS } from "../utils/queries";
+import { QUERY_DOGS } from "../utils/queries";
 
 const SavedHuman = () => {
   
