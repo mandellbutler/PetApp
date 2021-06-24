@@ -23,13 +23,15 @@ function App() {
   const [state, dispatch] = useGlobalContext();
 
 
+
+
   return (
 
     <ApolloProvider client={client}>
       {state.token ? (
-        AuthenticatedApp
+        <AuthenticatedApp />
       ) : (
-        UnauthenticatedApp
+        <UnauthenticatedApp />
       )}
     </ApolloProvider>
   );

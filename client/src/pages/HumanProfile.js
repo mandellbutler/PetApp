@@ -5,13 +5,13 @@ import {Row, Col, Card } from 'react-materialize';
 
 // import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { human } from "../server/schemas/resolvers";
-import { dogs } from "../server/schemas/resolvers";
+import { humans } from "../../server/schemas/resolvers";
+import { dogs } from "../../server/schemas/resolvers";
 
 const SavedHuman = () => {
   
 // user information
-  const { data } = useQuery(human);
+  const { data } = useQuery(humans);
   const { dogData } = useQuery(dogs);
   // const userData = data?.me || {};
 
@@ -22,16 +22,16 @@ const SavedHuman = () => {
     
 {/* userdata.savedpets */}
     <Row>
-{data.userData.savedHuman.map((user) => {
+{data.savedHuman.map((user) => {
             return (
 <Col s={12} m={7}>
       <Card>
         <div className="card-image">
-        <img src={user.image} alt="pet-profile-pic" />
+        {/* <img src={user.image} alt="pet-profile-pic" /> */}
           <span className="card-title">{user.name}</span>
         </div>
         <div className="card-content">
-          <p>{user.description}</p>
+          <p>{user.location}</p>
         </div>
         <div className="card-action">
           {/* <a href="#">This is a link</a> */}
@@ -48,11 +48,11 @@ const SavedHuman = () => {
 <Col s={12} m={7}>
       <Card>
         <div className="card-image">
-        <img src={dog.image} alt="pet-profile-pic" />
+        {/* <img src={dog.image} alt="pet-profile-pic" /> */}
           <span className="card-title">{dog.name}</span>
         </div>
         <div className="card-content">
-          <p>{dog.description}</p>
+          <p>{dog.location}</p>
         </div>
         <div className="card-action">
           <a href="pet-profile">Visit my Profile!</a>
@@ -68,4 +68,6 @@ const SavedHuman = () => {
 };
 
 export default SavedHuman;
+
+
 
