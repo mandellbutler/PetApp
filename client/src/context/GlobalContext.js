@@ -25,11 +25,6 @@ const reducer = (state, action) => {
         ...state,
         loggedIn: false
       }
-    case ADOPTSUBMIT:
-      return {
-        ...state, 
-        submitted: true
-      }
     default:
       return state
   }
