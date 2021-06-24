@@ -2,14 +2,15 @@ import React from "react";
 import 'materialize-css';
 import {Row, Col } from 'react-materialize';
 
-// import { deletepet } from '../utils/API';
+
 import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { SAVED_PETS } from "../utils/queries";
+import { human } from "../schemas/resolvers";
 
-const SavedPets = () => {
-  // const [userData, setUserData] = useState({});
-  const { data } = useQuery(SAVED_PETS);
+const SavedHuman = () => {
+  
+// user information
+  const { data } = useQuery(human);
   const userData = data?.me || {};
 
 
@@ -19,15 +20,15 @@ const SavedPets = () => {
     
 
 <Row>
-{userData.savedPets.map((pet) => {
+{userData.savedHuman.map((human) => {
             return (
 <Col s={12} m={6}>
   <div className="card blue-grey darken-1">
     <div className="card-content white-text">
-      <span className="card-title">{pet.name}</span>
-      <p>{pet.description}</p>
+      <span className="card-title">{human.name}</span>
+      <p>{human.description}</p>
     </div>
-    <div class="card-action">
+    <div className="card-action">
       <a href="#">This is a link</a>
       <a href="#">This is a link</a>
     </div>
@@ -41,4 +42,4 @@ const SavedPets = () => {
   );
 };
 
-export default SavedPets;
+export default SavedHuman;

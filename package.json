@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-<<<<<<< HEAD
+
     "concurrently": "^6.2.0",
     "react-router-dom": "^5.2.0"
   },
@@ -25,8 +25,7 @@
     "graphql": "^15.5.1",
     "materialize-css": "^1.0.0",
     "react-materialize": "^3.9.8"
-=======
-    "concurrently": "^6.2.0"
->>>>>>> 6bec29b40965042f86a6d5becc7e5a7288d3adb7
+
+
   }
 }
