@@ -5,20 +5,20 @@ import {Row, Col, Card} from 'react-materialize';
 
 // import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { dogs } from "../schemas/resolvers";
+import { dogs } from "../server/schemas/resolvers";
 
 const SavedPets = () => {
   
   const { data } = useQuery(dogs);
-  const userData = data?.me || {};
+//   const userData = data?.me || {};
 
 
 
   return (
     <>
-
+{/* userdata.savedpets */}
 <Row>
-{userData.savedPets.map((dog) => {
+{data.savedPets.map((dog) => {
             return (
 <Col s={12} m={7}>
       <Card>
