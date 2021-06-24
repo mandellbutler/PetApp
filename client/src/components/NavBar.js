@@ -1,11 +1,9 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
-import {Nav, Ul, Li} from 'react-materiaLize';
-import 'materiaLize-css';
-// import SignUpForm from './SignupForm';
-// import LoginForm from './LoginForm';
+import 'materialize-css';
+import {Nav, Li, Ul } from 'react-materialize';
 
-// import Auth from '../utils/auth';
+
+
 
 function NavBar() {
   return (

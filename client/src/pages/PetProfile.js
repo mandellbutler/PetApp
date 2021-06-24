@@ -5,7 +5,7 @@ import {Row, Col, Card} from 'react-materialize';
 
 // import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { dogs } from "../../server/schemas/resolvers";
+import { dogs } from "../../../server/schemas/resolvers";
 
 const SavedPets = () => {
   
