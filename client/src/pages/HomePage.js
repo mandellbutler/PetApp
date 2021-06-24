@@ -9,17 +9,12 @@ const Home = () =>{
 
      
 <Row>
-    <Col s={12} m={7}>
-      <Card>
+    <Col s={6} m={3}>
         <img src={homedog} alt="dog" />
-        </Card>
       </Col>
   </Row>
+
   
-
-       
-     
-
       
   );
 }
