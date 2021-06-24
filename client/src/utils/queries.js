@@ -10,3 +10,12 @@ export const QUERY_DOGS = gql`
       age
     }
   }`
+
+export const QUERY_HUMANS = gql`
+  query allHumans {
+    humans {
+      _id
+      name
+      location
+    }
+  }`
