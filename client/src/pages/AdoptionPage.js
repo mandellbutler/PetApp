@@ -16,7 +16,7 @@ function AdoptionPage() {
         <input type="text" id="address" name="address"/><br></br>
         <label for="email">Email:</label><br></br>
         <input type="text" id="email" name="email"/><br></br>
-        <button onClick={() => dispatch({ type: 'ADOPTSUBMIT' })}>Submit</button>
+        <a href='/'>Submit</a>
     </div>
       
   );
