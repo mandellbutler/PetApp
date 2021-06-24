@@ -21,7 +21,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addDog(name: String!, breed: String! location: String! age: Int!): Dog
+    addDog(name: String!, breed: String!, location: String!, age: Int!): Dog
     addHuman(name: String!, location: String!): Human
   }`
 

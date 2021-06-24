@@ -19,7 +19,7 @@ function Login() {
             <input></input>
           </div>
           <div>
-            <button>Sumbit</button>
+            <button>Submit</button>
           </div>
         </form>
       </section>
@@ -35,7 +35,7 @@ function Login() {
             <input></input>
           </div>
           <div>
-            <button>Sumbit</button>
+            <button>Submit</button>
           </div>
         </form>
       </section>
