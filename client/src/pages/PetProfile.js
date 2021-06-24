@@ -1,9 +1,9 @@
 import React from "react";
 import 'materialize-css';
-import {Row, Col } from 'react-materialize';
+import {Row, Col, Card} from 'react-materialize';
 
 
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
 import { dogs } from "../schemas/resolvers";
 
@@ -16,23 +16,24 @@ const SavedPets = () => {
 
   return (
     <>
-    
 
 <Row>
 {userData.savedPets.map((dog) => {
             return (
-<Col s={12} m={6}>
-  <div className="card blue-grey darken-1">
-    <div className="card-content white-text">
-      <span className="card-title">{dog.name}</span>
-      <p>{dog.description}</p>
-    </div>
-    <div className="card-action">
-      <a href="#">This is a link</a>
-      <a href="#">This is a link</a>
-    </div>
-  </div>
-</Col>
+<Col s={12} m={7}>
+      <Card>
+        <div className="card-image">
+        <img src={dog.image} alt="pet-profile-pic" />
+          <span className="card-title">{dog.name}</span>
+        </div>
+        <div className="card-content">
+          <p>{dog.description}</p>
+        </div>
+        <div className="card-action">
+          {/* <a href="#">This is a link</a> */}
+        </div>
+      </Card>
+    </Col>
     );
             })};
 </Row>
