@@ -31,4 +31,4 @@ const UnauthenticatedApp = () => {
   )
 }
 
-export default UnauthenticatedApp();
+export default UnauthenticatedApp;
