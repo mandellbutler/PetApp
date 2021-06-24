@@ -5,11 +5,11 @@ import {Row, Col, Card} from 'react-materialize';
 
 // import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { dogs } from "../../../server/schemas/resolvers";
+import { ADD_DOGS } from "../src/utils/queries";
 
 const SavedPets = () => {
   
-  const { data } = useQuery(dogs);
+  const { data } = useQuery(ADD_DOGS);
 //   const userData = data?.me || {};
 
 

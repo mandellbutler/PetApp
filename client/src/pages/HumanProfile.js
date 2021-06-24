@@ -5,14 +5,14 @@ import {Row, Col, Card } from 'react-materialize';
 
 // import Auth from "../utils/auth";
 import { useQuery, } from "@apollo/react-hooks";
-import { humans } from "../../../server/schemas/resolvers";
-import { dogs } from "../../../server/schemas/resolvers";
+import { QUERY_HUMANS } from "../src/utils/queries";
+import { QUERY_DOGS } from "../src/utils/queries";
 
 const SavedHuman = () => {
   
 // user information
-  const { data } = useQuery(humans);
-  const { dogData } = useQuery(dogs);
+  const { data } = useQuery(QUERY_HUMANS);
+  const { dogData } = useQuery(QUERY_DOGS);
   // const userData = data?.me || {};
 
 
