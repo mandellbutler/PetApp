@@ -1,7 +1,10 @@
+//takes in the token, decodes it, and pull's the user information
 import decode from 'jwt-decode';
 
+//creates new class to instantiate for a user
 class AuthService {
-  getProfile() {
+  //get user data from JSON web token by decoding it
+  getHuman() {
     return decode(this.getToken());
   }
 
@@ -30,7 +33,6 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
-
     window.location.assign('/');
   }
 
