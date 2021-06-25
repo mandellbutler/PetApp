@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from '../utils/auth';
+import { TextInput } from "react-materialize";
 // import { update } from "../../../server/models/Dog";
 
 const Login = (props) => {
@@ -40,6 +41,7 @@ const Login = (props) => {
   };
 
   return (
+    
     <div>
       <section>
         <form onSubmit={handleFormSubmit}>
