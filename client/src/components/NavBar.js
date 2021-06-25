@@ -1,48 +1,48 @@
 import React from "react";
 import 'materialize-css';
-import {Navbar,NavItem, Icon } from 'react-materialize';
+import { Navbar, NavItem, Icon } from 'react-materialize';
 
 
 
 const NavBar = () => {
   return (
-   
-    
+
+
     <Navbar
-    alignLinks="left"
-    // brand={<a className="brand-logo right" href="#">Logo</a>}
-    id="mobile-nav"
-    menuIcon={<Icon>menu</Icon>}
-    options={{
-      draggable: true,
-      edge: 'left',
-      inDuration: 250,
-      onCloseEnd: null,
-      onCloseStart: null,
-      onOpenEnd: null,
-      onOpenStart: null,
-      outDuration: 200,
-      preventScrolling: true
-    }}
-  >
-    <NavItem onClick={function noRefCheck(){}}>
+      alignLinks="left"
+      // brand={<a className="brand-logo right" href="#">Logo</a>}
+      id="mobile-nav"
+      menuIcon={<Icon>menu</Icon>}
+      options={{
+        draggable: true,
+        edge: 'left',
+        inDuration: 250,
+        onCloseEnd: null,
+        onCloseStart: null,
+        onOpenEnd: null,
+        onOpenStart: null,
+        outDuration: 200,
+        preventScrolling: true
+      }}
+    >
+      <NavItem onClick={function noRefCheck() { }}>
+      </NavItem>
+      <NavItem href="/">
+        Home
     </NavItem>
-    <NavItem href="/">
-      Home
+      <NavItem href="/pet-profile">
+        Pet Profile
     </NavItem>
-    <NavItem href="/pet-profile">
-      Pet Profile
+      <NavItem href="/human-profile">
+        My Profile
     </NavItem>
-    <NavItem href="/human-profile">
-    My Profile
+      <NavItem href="/search">
+        Search Pets
     </NavItem>
-    <NavItem href="/search">
-      Search Pets
+      <NavItem href="/Login">
+        Login/SignUp
     </NavItem>
-    <NavItem href="/Login">
-      Login/SignUp
-    </NavItem>
-  </Navbar>
+    </Navbar>
   );
 }
 

@@ -7,6 +7,7 @@ import PetProfile from "../pages/PetProfile";
 import Search from "../pages/Search";
 import Login from "../pages/Login";
 import Navbar from './NavBar';
+import Signup from '../pages/Signup';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -25,6 +26,7 @@ const UnauthenticatedApp = () => {
             <Route exact path='/pet-profile' component={PetProfile} />
             <Route exact path='/search' component={Search} />
             <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </>
