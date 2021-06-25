@@ -12,8 +12,6 @@ const SavedPets = () => {
   const { data } = useQuery(QUERY_DOGS);
 //   const userData = data?.me || {};
 
-
-
   return (
     <>
 

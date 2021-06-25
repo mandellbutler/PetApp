@@ -2,11 +2,8 @@ import React from "react";
 import 'materialize-css';
 import { Navbar, NavItem, Icon } from 'react-materialize';
 
-
-
 const NavBar = () => {
   return (
-
 
     <Navbar
       alignLinks="left"
