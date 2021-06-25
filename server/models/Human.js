@@ -31,6 +31,7 @@ const humanSchema = new Schema(
   }
 )
 
+//use pre-save middleware to hash user password
 humanSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
@@ -39,7 +40,7 @@ humanSchema.pre('save', async function (next) {
 
   next();
 });
-
+//compare the incoming password with the hashed password
 humanSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
