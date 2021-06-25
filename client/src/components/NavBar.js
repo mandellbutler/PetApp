@@ -12,6 +12,7 @@ const NavBar = () => {
     alignLinks="left"
     // brand={<a className="brand-logo right" href="#">Logo</a>}
     id="mobile-nav"
+    className="deep-orange darken-2"
     menuIcon={<Icon>menu</Icon>}
     options={{
       draggable: true,

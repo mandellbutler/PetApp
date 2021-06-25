@@ -11,8 +11,8 @@ const Home = () =>{
 
   <Row>
   <Col
-    m={8}
-    s={12}
+    m={12}
+    s={6}
   >
     <Card
       actions={[
@@ -20,6 +20,7 @@ const Home = () =>{
   href="/search"
   node="a"
   waves="light"
+  className="deep-orange darken-2 valign-center"
 >
   Search for Pets Here!
 </Button>
@@ -47,10 +48,10 @@ const Home = () =>{
       
       closeIcon={<Icon>close</Icon>}
       revealIcon={<Icon>more_vert</Icon>}
-      textClassName="white-text"
-      title="Card title"
+      textClassName="dark-text"
     >
-      I am a very simple card.
+      <h3>About Us</h3>
+      <h5>Fetch is an online application which allows local pet lovers to get connected with furry friends looking for homes. Whether you are looking to adopt or rehouse a pet, we at Fetch will be happy to help! </h5>
     </Card>
   </Col>
 </Row>
