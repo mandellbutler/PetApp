@@ -14,7 +14,7 @@ const AuthenticatedApp = () => {
   return (
     <>
       <Router>
-        <>
+        
           <Navbar />
           <Switch>
             <Route exact path='/' component={Home} />
@@ -24,7 +24,7 @@ const AuthenticatedApp = () => {
             <Route exact path='/search' component={Search} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
-        </>
+        
       </Router>
     </>
   )
