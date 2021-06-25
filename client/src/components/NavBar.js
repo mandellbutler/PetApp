@@ -1,21 +1,25 @@
 import React from "react";
+import 'materialize-css';
+import {Nav, Li, Ul } from 'react-materialize';
 
-function NavBar() {
+
+
+const NavBar = () => {
   return (
-    <div>
-      {/* <Route exact path='/adoption-page' component={AdoptionPage} />
-            <Route exact path='/human-profile' component={HumanProfile} />
-            <Route exact path='/pet-profile' component={PetProfile} />
-            <Route exact path='/search' component={Search} /> */}
-        Nav
-      <a href='/'>Home</a>
-      <a href='/adoption-page'>Adoption</a>
-      <a href='/human-profile'>Human</a>
-      <a href='/pet-profile'>Pet</a>
-      <a href='/search'>Search</a>
-      <a href='/login'>Login</a>
-
-    </div>
+   
+    
+  //   <nav>
+  //   <div className="nav-wrapper">
+  //     {/* <a href="#" class="brand-logo">Logo</a> */}
+  //     <Ul id="nav-mobile" class="right hide-on-med-and-down">
+  //       <Li><a href="/adoption-page">Adoption Page</a></Li>
+  //       <Li><a href="/human-profile">My Profile</a></Li>
+  //       <Li><a href="/pet-profile">Pet Profile</a></Li>
+  //       <Li><a href="/search">Search</a></Li>
+  //     </Ul>
+  //   </div>
+  // </nav>
+<p>nvm</p>
   );
 }
 
