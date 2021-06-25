@@ -12,6 +12,8 @@ function Search() {
         <label for="breed">Breed:</label><br></br>
         <input type="text" id="breed" name="breed"/><br></br>
         <button>Fetch Friends!</button>
+
+        
     </div>
   )
 }
