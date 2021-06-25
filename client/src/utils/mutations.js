@@ -4,8 +4,9 @@ export const LOGIN = gql`
 mutation login($email: String!, $password: String!) {
   login(email: $email, password: $password) {
     token
-    human {
-      _id
+  	human {
+      name
+      location
     }
   }
 }
@@ -24,12 +25,13 @@ export const ADD_DOGS = gql`
 `;
 
 export const ADD_HUMANS = gql`
-mutation addHuman($name: String!, $location: String, $email: String!, $password: String!) {
-  addHuman(name: $name, location: $location, email: $email, password: $password) {
-    _id
-    name
-    location
-    email
-    password
+mutation addHuman($name: String!, $email: String!, $password: String!) {
+  addHuman(name: $name, email: $email, password: $password) {
+    token
+  	human {
+      name
+      location
+    }
   }
-}`
+}
+`

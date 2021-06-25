@@ -3,19 +3,13 @@ const bcrypt = require('bcrypt')
 
 const humanSchema = new Schema(
   {
-    id: {
-      type: Number,
-      primaryKey: true,
-      autoIncrement: true,
-      required: true
-    },
     name: {
       type: String,
       required: true
     },
     location: {
       type: String,
-      required: true
+      required: false
     },
     email: {
       type: String,

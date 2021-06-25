@@ -2,7 +2,7 @@ import React, { useContext, createContext, useReducer } from "react";
 import {
   LOGIN,
   LOGOUT,
-  ADOPTSUBMIT
+  // ADOPTSUBMIT
 } from "./actions";
 
 
