@@ -11,7 +11,7 @@ const Home = () =>{
 
   <Row>
   <Col
-    m={6}
+    m={8}
     s={12}
   >
     <Card
@@ -27,22 +27,24 @@ const Home = () =>{
       closeIcon={<Icon>close</Icon>}
       header={<CardTitle image={homedog}></CardTitle>}
       revealIcon={<Icon>more_vert</Icon>}
+      
     >
     Find local pets to adopt with Fetch!
     </Card>
-  </Col>
+  </Col>,
 
   <Row>
   <Col
     m={6}
     s={12}
+    className="center-align"
   >
     <Card
       actions={[
         <a key="1" href="#">This is a link</a>,
         <a key="2" href="#">This is a link</a>
       ]}
-      className="blue-grey darken-1"
+      
       closeIcon={<Icon>close</Icon>}
       revealIcon={<Icon>more_vert</Icon>}
       textClassName="white-text"
@@ -52,27 +54,8 @@ const Home = () =>{
     </Card>
   </Col>
 </Row>
-</Row>,
-      <Row>
-      <Col
-        m={6}
-        s={12}
-      >
-        <Card
-          actions={[
-            <a key="1" href="#">This is a link</a>,
-            <a key="2" href="#">This is a link</a>
-          ]}
-          className="blue-grey darken-1"
-          closeIcon={<Icon>close</Icon>}
-          revealIcon={<Icon>more_vert</Icon>}
-          textClassName="white-text"
-          title="Card title"
-        >
-          I am a very simple card.
-        </Card>
-      </Col>
-    </Row>
+</Row>
+      
   );
 }
 

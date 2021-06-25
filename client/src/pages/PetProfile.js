@@ -9,10 +9,10 @@ import { QUERY_DOGS } from "../utils/queries";
 
 const SavedPets = () => {
   
-  // const { data } = useQuery(QUERY_DOGS);
+  const { data } = useQuery(QUERY_DOGS);
 //   const userData = data?.me || {};
 
-    const [state, dispatch] = useGlobelContext();
+    // const [state, dispatch] = useGlobelContext();
 
 
 
@@ -20,7 +20,9 @@ const SavedPets = () => {
     <>
  {/* userdata.savedpets  */}
 <Row>
-{state.human.dogs.map((dog) => {
+{/* {state.human.dogs.map((dog) => { */}
+    {data.human.dogs.map((dog) => {
+
             return (
 <Col s={12} m={7}>
       <Card>
