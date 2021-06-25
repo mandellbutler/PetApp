@@ -3,7 +3,6 @@ import 'materialize-css';
 import {Row, Col, Card, Icon, CardTitle } from 'react-materialize';
 import homedog from "../assets/homedog.png";
 
-
 const Home = () =>{
   return (
 
@@ -29,9 +28,3 @@ const Home = () =>{
 }
 
 export default Home;
-
-{/* <Row>
-    <Col s={6} m={3}>
-        <img src={homedog} alt="dog" />
-      </Col>
-  </Row> */}

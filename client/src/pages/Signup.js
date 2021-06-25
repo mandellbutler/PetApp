@@ -12,6 +12,7 @@ function Signup(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log("FormState: ", formState)
     const mutationResponse = await signup({
       variables: {
         name: formState.name,
@@ -19,8 +20,8 @@ function Signup(props) {
         password: formState.password
       },
     });
-
-    const token = mutationResponse.data.signup.token;
+    console.log("Mut Resp: ", mutationResponse)
+    const token = mutationResponse.data.addHuman.token;
     Auth.login(token);
   };
 
@@ -39,10 +40,10 @@ function Signup(props) {
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div >
-          <label htmlFor="firstName">Name:</label>
+          <label htmlFor="name">Name:</label>
           <input
             placeholder="First"
-            name="firstName"
+            name="name"
             type="firstName"
             id="firstName"
             onChange={handleChange}
