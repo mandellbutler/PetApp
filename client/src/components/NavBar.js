@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
    
     
-    <nav>
+  <nav>
     <div className="nav-wrapper">
       {/* <a href="#" class="brand-logo">Logo</a> */}
       <Ul id="nav-mobile" class="right hide-on-med-and-down">
