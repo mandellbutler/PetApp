@@ -8,7 +8,7 @@ const PetItem = ({ pet }) => {
     
     <Card
         closeIcon={<Icon>close</Icon>}
-        header={<CardTitle image={pet.primary_photo_cropped ? pet.primary_photo_cropped.full : "/pet.png"} reveal waves="light"/>}
+        header={<CardTitle image={pet.primary_photo_cropped ? pet.primary_photo_cropped.full : "/images/dog.jpg"} reveal waves="light"/>}
         reveal={<p>{pet.description}</p>}
         revealIcon={<Icon>more_vert</Icon>}
         title={pet.name}
