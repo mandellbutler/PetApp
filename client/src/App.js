@@ -11,7 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import './App.css';
 import React, { useState } from "react";
-import ApolloClient from 'apollo-boost';
+// import ApolloClient from 'apollo-boost';
 
 //construct main graphql endpoint
 const httpLink = createHttpLink({
