@@ -3,7 +3,6 @@ import 'materialize-css';
 import {Row, Col, Card, Icon, CardTitle } from 'react-materialize';
 import homedog from "../assets/homedog.png";
 
-
 const Home = () =>{
   return (
 
@@ -17,7 +16,7 @@ const Home = () =>{
         <a key="1" href="#">This is a Link</a>
       ]}
       closeIcon={<Icon>close</Icon>}
-      header={<CardTitle image src={homedog}>Card Title</CardTitle>}
+      header={<CardTitle image src={homedog}></CardTitle>}
       revealIcon={<Icon>more_vert</Icon>}
     >
       Here is the standard card with an image thumbnail.
@@ -29,9 +28,3 @@ const Home = () =>{
 }
 
 export default Home;
-
-{/* <Row>
-    <Col s={6} m={3}>
-        <img src={homedog} alt="dog" />
-      </Col>
-  </Row> */}
