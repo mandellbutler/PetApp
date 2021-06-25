@@ -68,6 +68,9 @@ const Login = (props) => {
             <button type="submit" onClick={() => dispatch({ type: LOGIN })}>Login</button>
           </div>
         </form>
+        <div>
+          <p>Not a Member Yet? <a href="/signup">Sign Up</a></p>
+        </div>
       </section>
     </div>
 
