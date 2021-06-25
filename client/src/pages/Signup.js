@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_HUMANS } from '../utils/mutations';
+import {TextInput, Button} from 'react-materialize';
+import 'materialize-css';
 
 function Signup(props) {
   const [formState, setFormState] = useState({ name: '', email: '', password: '' });
@@ -35,17 +37,28 @@ function Signup(props) {
 
   return (
     <div>
-      <Link to="/login">← Go to Login</Link>
+      <div>
+          <Button
+    href="/login"
+    node="a"
+    waves="light"
+    className="deep-orange accent-2"
+      >
+        Back to Login
+    </Button>
+
+    </div>
+      {/* <Link to="/login">← Go to Login</Link> */}
 
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
-        <div >
+        <div>
           <label htmlFor="name">Name:</label>
-          <input
-            placeholder="First"
+          <TextInput
+            placeholder="Name"
             name="name"
             type="firstName"
-            id="firstName"
+            id="firstName TextInput-4"
             onChange={handleChange}
           />
         </div>
@@ -70,8 +83,8 @@ function Signup(props) {
           />
         </div>
         <div>
-          <button type="submit" onClick={() => dispatch({ type: ADD_HUMANS })}>Signup</button>
-        </div>
+          <Button type="submit" className="deep-orange accent-2 valign-center" onClick={() => dispatch({ type: ADD_HUMANS })}>Signup</Button>
+          </div>   
       </form>
     </div>
   );
