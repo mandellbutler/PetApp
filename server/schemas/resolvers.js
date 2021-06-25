@@ -1,5 +1,5 @@
 const { Dog, Human } = require('../models')
-const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError, UserInputError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -9,7 +9,14 @@ const resolvers = {
     },
     humans: async () => {
       return await Human.find({}).populate('humans')
-    }
+    },
+    //allows logged in user to be retrieved
+    me: async (parent, args, context) => {
+      if (context.human) {
+        return Human.findone({ _id: context.human._id });
+      }
+      throw new AuthenticationError('You must be logged in to view this page!');
+    },
   },
 
   Mutation: {
