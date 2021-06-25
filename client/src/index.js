@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { GlobalProvider } from './context/GlobalContext'
 import reportWebVitals from './reportWebVitals';
+import 'materialize-css';
 
 ReactDOM.render(
   <GlobalProvider>
