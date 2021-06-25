@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-// import { useGlobalContext } from '../context/GlobalContext';
+import { useGlobalContext } from '../context/GlobalContext';
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from '../utils/auth';
-import { TextInput } from "react-materialize";
+import { TextInput, Button } from "react-materialize";
 // import { update } from "../../../server/models/Dog";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ name: '', email: '', password: '' });
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN);
+  const [state, dispatch] = useGlobalContext();
 
   //update the state based on the user input
   const handleChange = (event) => {
@@ -34,7 +35,6 @@ const Login = (props) => {
     }
     //clear form values
     setFormState({
-      name: '',
       email: '',
       password: '',
     });
@@ -45,49 +45,11 @@ const Login = (props) => {
     <div>
       <section>
         <form onSubmit={handleFormSubmit}>
-          <h2>Sign Up</h2>
-          <div>
-            <input
-              className="form-input"
-              placeholder="Name"
-              name="name"
-              type="name"
-              value={formState.name}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              className="form-input"
-              placeholder="youremail@ilovepets.com"
-              name="email"
-              type="email"
-              value={formState.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              className="form-input"
-              placeholder="*******"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <button type="submit">Submit</button>
-          </div>
-        </form>
-      </section>
-      <section>
-        <form>
           <h2>Login</h2>
           <div>
             <input
               className="form-input"
-              placeholder="youremail@ilovepets.com"
+              placeholder="email@email.com"
               name="email"
               type="email"
               value={formState.email}
@@ -105,9 +67,12 @@ const Login = (props) => {
             />
           </div>
           <div>
-            <button type="submit">Login</button>
+            <Button type="submit" className="deep-orange accent-2 valign-center" onClick={() => dispatch({ type: LOGIN })}>Login</Button>
           </div>
         </form>
+        <div>
+          <p>Not a Member Yet? <a href="/signup">Sign Up</a></p>
+        </div>
       </section>
     </div>
 

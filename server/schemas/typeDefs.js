@@ -25,11 +25,12 @@ const typeDefs = gql`
   type Query {
     dogs: [Dog]
     humans: [Human]
+    me: Human
   }
 
   type Mutation {
     addDog(name: String!, breed: String!, location: String!, age: Int!): Dog
-    addHuman(name: String!, location: String email: String!, password: String!): Auth
+    addHuman(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
   }`
 
