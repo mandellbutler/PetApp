@@ -10,28 +10,27 @@ import { QUERY_DOGS } from "../utils/queries";
 
 const SavedHuman = () => {
   
-// user information
+// human information
   const { data } = useQuery(QUERY_HUMANS);
   const { dogData } = useQuery(QUERY_DOGS);
-  // const userData = data?.me || {};
-
-
+  // const humanData = data?.me || {};
+  console.log(data)
 
   return (
     <>
     
-{/* userdata.savedpets */}
+{/* humandata.savedpets */}
     <Row>
-{data.savedHuman.map((user) => {
+{data.savedHuman.map((human) => {
             return (
 <Col s={12} m={7}>
       <Card>
         <div className="card-image">
-        {/* <img src={user.image} alt="pet-profile-pic" /> */}
-          <span className="card-title">{user.name}</span>
+        {/* <img src={human.image} alt="pet-profile-pic" /> */}
+          <span className="card-title">{human.name}</span>
         </div>
         <div className="card-content">
-          <p>{user.location}</p>
+          <p>{human.location}</p>
         </div>
         <div className="card-action">
           {/* <a href="#">This is a link</a> */}
