@@ -1,11 +1,13 @@
 import React from "react";
 import 'materialize-css';
-import {Row, Col, Card, Icon, CardTitle } from 'react-materialize';
+import {Row, Col, Card, Icon, CardTitle, Button} from 'react-materialize';
 import homedog from "../assets/homedog.png";
 
 
 const Home = () =>{
   return (
+
+
 
   <Row>
   <Col
@@ -14,13 +16,19 @@ const Home = () =>{
   >
     <Card
       actions={[
-        <a key="1" href="#">This is a Link</a>
+        <Button
+  href="/search"
+  node="a"
+  waves="light deep-orange darken-2"
+>
+  Search for Pets Here!
+</Button>
       ]}
       closeIcon={<Icon>close</Icon>}
-      header={<CardTitle image src="./public/homedog.jpg"></CardTitle>}
+      header={<CardTitle image={homedog}></CardTitle>}
       revealIcon={<Icon>more_vert</Icon>}
     >
-      Here is the standard card with an image thumbnail.
+    Find local pets to adopt with Fetch!
     </Card>
   </Col>
 </Row>
