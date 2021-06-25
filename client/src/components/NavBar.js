@@ -1,22 +1,48 @@
 import React from "react";
+import 'materialize-css';
+import { Navbar, NavItem, Icon } from 'react-materialize';
 
-function NavBar() {
+
+
+const NavBar = () => {
   return (
-    <div>
-      {/* <Route exact path='/adoption-page' component={AdoptionPage} />
-            <Route exact path='/human-profile' component={HumanProfile} />
-            <Route exact path='/pet-profile' component={PetProfile} />
-            <Route exact path='/search' component={Search} /> */}
-        Nav
-      <a href='/'>Home</a>
-      <a href='/adoption-page'>Adoption</a>
-      <a href='/human-profile'>Human</a>
-      <a href='/pet-profile'>Pet</a>
-      <a href='/search'>Search</a>
-      <a href='/login'>Login</a>
-      <a href='/signup'>Sign Up</a>
 
-    </div>
+
+    <Navbar
+      alignLinks="left"
+      // brand={<a className="brand-logo right" href="#">Logo</a>}
+      id="mobile-nav"
+      menuIcon={<Icon>menu</Icon>}
+      options={{
+        draggable: true,
+        edge: 'left',
+        inDuration: 250,
+        onCloseEnd: null,
+        onCloseStart: null,
+        onOpenEnd: null,
+        onOpenStart: null,
+        outDuration: 200,
+        preventScrolling: true
+      }}
+    >
+      <NavItem onClick={function noRefCheck() { }}>
+      </NavItem>
+      <NavItem href="/">
+        Home
+    </NavItem>
+      <NavItem href="/pet-profile">
+        Pet Profile
+    </NavItem>
+      <NavItem href="/human-profile">
+        My Profile
+    </NavItem>
+      <NavItem href="/search">
+        Search Pets
+    </NavItem>
+      <NavItem href="/Login">
+        Login/SignUp
+    </NavItem>
+    </Navbar>
   );
 }
 
