@@ -17,7 +17,29 @@ function Search() {
     {
       name: 'jack',
       description: 'definitely not a cat',
-    }
+    },
+    {
+      name: 'hawa',
+      description: 'design expert',
+      primary_photo_cropped: {
+        full: "/images/hawa.jpg"
+      }
+    },
+    {
+      name: 'mandell',
+      description: 'hackerman',
+      primary_photo_cropped: {
+        full: "/images/mandell.jpg"
+      }
+    },
+    {
+      name: 'luis',
+      description: 'please come back',
+      primary_photo_cropped: {
+        full: "/images/luis.jpg"
+      }
+    },
+
   ]
   // pets state with starting data
   const [pets, setPets] = useState(initialPets);
