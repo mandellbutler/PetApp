@@ -14,6 +14,7 @@ function NavBar() {
       <a href='/pet-profile'>Pet</a>
       <a href='/search'>Search</a>
       <a href='/login'>Login</a>
+      <a href='/signup'>Sign Up</a>
 
     </div>
   );
