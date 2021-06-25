@@ -6,7 +6,7 @@ import Auth from '../utils/auth';
 // import { update } from "../../../server/models/Dog";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ name: '', email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN);
 
   //update the state based on the user input
@@ -33,6 +33,7 @@ const Login = (props) => {
     }
     //clear form values
     setFormState({
+      name: '',
       email: '',
       password: '',
     });
@@ -49,7 +50,7 @@ const Login = (props) => {
               placeholder="Name"
               name="name"
               type="name"
-              value="name"
+              value={formState.name}
               onChange={handleChange}
             />
           </div>
