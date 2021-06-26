@@ -8,9 +8,11 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { LOGIN, LOGOUT } from './context/actions'
+import auth from './utils/auth'
 
 import './App.css';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import ApolloClient from 'apollo-boost';
 
 //construct main graphql endpoint
@@ -40,6 +42,28 @@ const client = new ApolloClient({
 function App() {
   const [state, dispatch] = useGlobalContext();
 
+   useEffect(() => {
+     persistLogin()
+   }, [] )
+
+   const persistLogin = () => {
+    // check if your logged in
+    if (auth.loggedIn()) {
+      // get the token from local storage
+      const token = auth.getToken();
+      dispatch({
+        type: LOGIN,
+        payload: { token }
+      })
+    } else {
+      dispatch({
+        type: LOGOUT
+      })
+    }
+  }
+     
+
+   
   return (
 
     <ApolloProvider client={client}>

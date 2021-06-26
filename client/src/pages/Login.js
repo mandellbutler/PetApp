@@ -3,7 +3,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from '../utils/auth';
-import { TextInput, Button } from "react-materialize";
+import {Button } from "react-materialize";
 // import { update } from "../../../server/models/Dog";
 
 const Login = (props) => {
@@ -26,9 +26,10 @@ const Login = (props) => {
     console.log('FormState: ', formState);
     try {
       const { data } = await login({
-        variable: { ...formState },
+        variables: { ...formState },
       });
 
+      console.log("Data: ", data)
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);

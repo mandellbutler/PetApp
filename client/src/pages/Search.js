@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
 import PetList from '../components/PetList';
+import {Button} from 'react-materialize';
 
 
 function Search() {
@@ -52,7 +53,8 @@ function Search() {
         <input type="text" id="location" name="location"/><br></br>
         <label for="breed">Breed:</label><br></br>
         <input type="text" id="breed" name="breed"/><br></br>
-        <button>Fetch Friends!</button>
+        {/* <button>Fetch Friends!</button> */}
+        <Button type="submit" className="deep-orange accent-2 valign-center">Fetch Fiends!</Button>
 
       <PetList pets={pets}></PetList>
 
