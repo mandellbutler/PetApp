@@ -9,13 +9,13 @@ import Login from "../pages/Login";
 import Navbar from './NavBar';
 import Signup from '../pages/Signup';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useGlobalContext } from "../context/GlobalContext";
+// import { useGlobalContext } from "../context/GlobalContext";
 
 
 const UnauthenticatedApp = () => {
   // const [state, dispatch] = useGlobalContext();
 
-    
+
 
   return (
     <>
@@ -30,7 +30,7 @@ const UnauthenticatedApp = () => {
             <Route exact path='/search' component={Search} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
-            <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+            <Route render={() => <p className='display-2'>Sorry! You must be logged in to see this page :(</p>} />
           </Switch>
         </>
       </Router>
