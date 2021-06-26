@@ -9,10 +9,13 @@ import Login from "../pages/Login";
 import Navbar from './NavBar';
 import Signup from '../pages/Signup';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useGlobalContext } from "../context/GlobalContext";
 
 
 const UnauthenticatedApp = () => {
   // const [state, dispatch] = useGlobalContext();
+
+    
 
   return (
     <>

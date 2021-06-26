@@ -34,6 +34,7 @@ const SavedHuman = () => {
     s={12}
   >
     <Card
+      key={human.name}
       actions={[
         <a key="1" href="#">This is a Link</a>
       ]}

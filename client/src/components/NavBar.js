@@ -37,6 +37,9 @@ const NavBar = () => {
       <NavItem href="/search">
         Search Pets
     </NavItem>
+    <NavItem href="/adoption-page">
+      AdoptionPage
+    </NavItem>
       <NavItem href="/Login">
         Login/SignUp
     </NavItem>

@@ -3,6 +3,7 @@ import { useGlobalContext } from '../context/GlobalContext';
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from '../utils/auth';
+import { TextInput, Button } from "react-materialize";
 // import { update } from "../../../server/models/Dog";
 
 const Login = (props) => {
@@ -41,6 +42,7 @@ const Login = (props) => {
   };
 
   return (
+    
     <div>
       <section>
         <form onSubmit={handleFormSubmit}>
@@ -66,7 +68,7 @@ const Login = (props) => {
             />
           </div>
           <div>
-            <button type="submit" onClick={() => dispatch({ type: LOGIN })}>Login</button>
+            <Button type="submit" className="deep-orange accent-2 valign-center" onClick={() => dispatch({ type: LOGIN })}>Login</Button>
           </div>
         </form>
         <div>

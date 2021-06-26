@@ -12,6 +12,7 @@ const Home = () =>{
   <Col
     m={12}
     s={6}
+    className="center-align"
   >
     <Card
       actions={[
@@ -19,7 +20,7 @@ const Home = () =>{
   href="/search"
   node="a"
   waves="light"
-  className="deep-orange darken-2 valign-center"
+  className="deep-orange accent-2 valign-center"
 >
   Search for Pets Here!
 </Button>
@@ -41,8 +42,14 @@ const Home = () =>{
   >
     <Card
       actions={[
-        <a key="1" href="#">This is a link</a>,
-        <a key="2" href="#">This is a link</a>
+        <Button
+        href="/adoption-page"
+        node="a"
+        waves="light"
+        className="deep-orange accent-2 valign-center center-align"
+      >
+        Adopt a Pet Today!
+      </Button>
       ]}
       
       closeIcon={<Icon>close</Icon>}
