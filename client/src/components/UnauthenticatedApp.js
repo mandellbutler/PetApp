@@ -24,9 +24,9 @@ const UnauthenticatedApp = () => {
           <Navbar />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/adoption-page' component={AdoptionPage} />
+            {/* <Route exact path='/adoption-page' component={AdoptionPage} />
             <Route exact path='/human-profile' component={HumanProfile} />
-            <Route exact path='/pet-profile' component={PetProfile} />
+            <Route exact path='/pet-profile' component={PetProfile} /> */}
             <Route exact path='/search' component={Search} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />

@@ -1,10 +1,12 @@
 import React from "react";
 import 'materialize-css';
-import { Navbar, NavItem, Icon } from 'react-materialize';
+import { Navbar, NavItem, Icon, Button } from 'react-materialize';
 import { useGlobalContext } from "../context/GlobalContext";
+import { LOGOUT } from "../context/actions";
 
 const NavBar = () => {
   const [state, dispatch] = useGlobalContext();
+
   return (
 
     <Navbar
@@ -42,12 +44,12 @@ const NavBar = () => {
       <>
         {state.loggedIn ? (
           <>
-            <NavItem href="/">
-              Logout
+            <NavItem>
+              <Button type="submit" className="deep-orange accent-2 valign-center" onClick={() => dispatch({ type: LOGOUT, loggedIn: false })}>Logout</Button>
             </NavItem>
           </>
         ) : (
-          <NavItem href="/Login">
+          <NavItem href="/Login" >
             Login/SignUp
           </NavItem>
         )}
