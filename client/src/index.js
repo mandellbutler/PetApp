@@ -5,7 +5,7 @@ import App from './App';
 import { GlobalProvider } from './context/GlobalContext'
 import reportWebVitals from './reportWebVitals';
 import 'materialize-css';
-require('dotenv').config({path: '../.env'});
+require('dotenv').config();
 
 
 ReactDOM.render(

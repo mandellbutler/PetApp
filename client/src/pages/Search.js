@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
 import PetList from '../components/PetList';
+// require('dotenv').config();
 
 
 
 function Search() {
-  // const [state, dispatch] = useGlobalContext();
+  const [state, dispatch] = useGlobalContext();
 
   // url and token for fetch request
   const url = "https://api.petfinder.com/v2/animals?location=ny";  // Starting pets
@@ -50,7 +51,7 @@ function Search() {
   // Fetch api info from petfinder
   const getPets = async () => {
     let token = process.env.REACT_APP_APITOKEN;
-    console.log("Tolkein: " + token);
+    // console.log("Access Tolkein: " + token);
     let apiData = await getApi(url, token);
 
     // if token doesn't work, get new one
