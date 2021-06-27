@@ -30,7 +30,8 @@ const UnauthenticatedApp = () => {
             <Route exact path='/search' component={Search} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
-            <Route render={() => <p className='display-2'>Sorry! You must be logged in to see this page :(</p>} />
+            <Route render={() => <div><p className='display-2'>Sorry! You must be logged in to see this page :(</p>
+            </div>} />
           </Switch>
         </>
       </Router>
