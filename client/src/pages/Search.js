@@ -11,7 +11,7 @@ function Search() {
   const [state, dispatch] = useGlobalContext();
 
   // url and token for fetch request
-  const url = "https://api.petfinder.com/v2/animals?location=ny";  // Starting pets
+  // const url = "https://api.petfinder.com/v2/animals?location=ny";  // Starting pets
   const initialPets = [
     {
       name: 'steve',
@@ -50,7 +50,7 @@ function Search() {
   // pets state with starting data
   const [pets, setPets] = useState(initialPets);
   const [params, setParams] = useState({
-    location: 'ny',
+    location: '',
     species: 'dog',
     breed: '',
   })
@@ -71,13 +71,15 @@ function Search() {
 
   // Fetch api info from petfinder
   const getPets = async () => {
-    const serverData = await fetch('/api/hello', {
+    const serverData = await fetch('/api/pets', {
       method: 'POST',
       headers:{
         "accepts":"application/json"
-      }
+      },
+      body: JSON.stringify(params)
     })
     const serverPets = await serverData.json();
+    console.log("Server Pets: ", serverPets);
     // console.log("Apollo Data: ", serverPets);
 
     // let token = process.env.REACT_APP_APITOKEN;
