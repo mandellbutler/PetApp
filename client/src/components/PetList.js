@@ -1,5 +1,4 @@
 import React from 'react';
-// import IssueItem from '../components/IssueItem';
 import IssueItem from './PetItem'
 import { Row, Col } from 'react-materialize';
 

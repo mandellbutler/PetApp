@@ -6,6 +6,9 @@ const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 
+const { getPet } = require('./utils/petApi')
+require('dotenv').config();
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -27,6 +30,9 @@ if (process.env.NODE_ENV === 'production') {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+
+// Using this route to get info - yilun
+app.post('/api/pets', getPet )
 
 db.once('open', () => {
   app.listen(PORT, () => {
