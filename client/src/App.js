@@ -42,15 +42,16 @@ const client = new ApolloClient({
 function App() {
   const [state, dispatch] = useGlobalContext();
 
-   useEffect(() => {
-     persistLogin()
-   }, [] )
+  useEffect(() => {
+    persistLogin()
+  }, [])
 
-   const persistLogin = () => {
+  const persistLogin = () => {
+    const token = auth.getToken();
     // check if your logged in
     if (auth.loggedIn()) {
       // get the token from local storage
-      const token = auth.getToken();
+      console.log("Token: ", token)
       dispatch({
         type: LOGIN,
         payload: { token }
@@ -61,13 +62,14 @@ function App() {
       })
     }
   }
-     
 
-   
+
+
   return (
 
     <ApolloProvider client={client}>
-      {state.token ? (
+      {console.log("State LoggedIn?: ", state.loggedIn)}
+      {state.loggedIn ? (
         <AuthenticatedApp />
       ) : (
         <UnauthenticatedApp />
