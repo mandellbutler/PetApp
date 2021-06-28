@@ -9,13 +9,14 @@ import Login from "../pages/Login";
 import Navbar from './NavBar';
 import Signup from '../pages/Signup';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useGlobalContext } from "../context/GlobalContext";
+import 'materialize-css';
+// import { useGlobalContext } from "../context/GlobalContext";
 
 
 const UnauthenticatedApp = () => {
   // const [state, dispatch] = useGlobalContext();
 
-    
+
 
   return (
     <>
@@ -25,12 +26,18 @@ const UnauthenticatedApp = () => {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/adoption-page' component={AdoptionPage} />
-            <Route exact path='/human-profile' component={HumanProfile} />
-            <Route exact path='/pet-profile' component={PetProfile} />
+            {/* <Route exact path='/human-profile' component={HumanProfile} />
+            <Route exact path='/pet-profile' component={PetProfile} /> */}
             <Route exact path='/search' component={Search} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
-            <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+            <Route render={() =>
+              <div class="container center-align">
+                <img class="circle responsive-img" alt="" src="../images/security.png"></img>
+                <p id="loginAlert" class="flow-text" className='display-2'>
+                  Sorry! You must <a href="/signup">login</a> to view this page.
+                </p>
+              </div>} />
           </Switch>
         </>
       </Router>

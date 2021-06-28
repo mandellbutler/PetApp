@@ -3,7 +3,8 @@ import { useGlobalContext } from '../context/GlobalContext';
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from '../utils/auth';
-import {Button } from "react-materialize";
+import { TextInput, Button } from "react-materialize";
+import { MdPets } from "react-icons/md";
 // import { update } from "../../../server/models/Dog";
 
 const Login = (props) => {
@@ -20,6 +21,7 @@ const Login = (props) => {
       [name]: value,
     })
   }
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -42,11 +44,14 @@ const Login = (props) => {
   };
 
   return (
-    
-    <div>
+
+    <div class="container" id="loginForm">
       <section>
-        <form onSubmit={handleFormSubmit}>
+        <div class="formHeader">
           <h2>Login</h2>
+          <MdPets size={80} />
+        </div>
+        <form onSubmit={handleFormSubmit}>
           <div>
             <input
               className="form-input"
@@ -79,52 +84,5 @@ const Login = (props) => {
 
   )
 };
-
-
-// function Login() {
-//   const [state, dispatch] = useGlobalContext();
-//   return (
-//     <div>
-//       <section>
-//         <form >
-//           <h2>Sign Up</h2>
-//           <div>
-//             <label>Name:</label>
-//             <input></input>
-//           </div>
-//           <div>
-//             <label>Email:</label>
-//             <input></input>
-//           </div>
-//           <div>
-//             <label>Password:</label>
-//             <input type="password"></input>
-//           </div>
-//           <div>
-//             <button onClick={() => dispatch({ type: LOGIN })}>Submit</button>
-//           </div>
-//         </form>
-//       </section>
-//       <section>
-//         <form>
-//           <h2>Login</h2>
-//           <div>
-//             <label>Email:</label>
-//             <input></input>
-//           </div>
-//           <div>
-//             <label>Password:</label>
-//             <input type="password"></input>
-//           </div>
-//           <div>
-//             <button onClick={() => dispatch({ type: 'LOGIN' })}>Login</button>
-//           </div>
-//         </form>
-//       </section>
-//     </div>
-
-//   )
-// }
-
 
 export default Login;
