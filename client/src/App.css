@@ -51,7 +51,7 @@
   box-shadow: 2px 2px 1em grey;
 }
 
-#formHeader {
+.formHeader {
   display: flex;
   justify-content: space-between;
 }

@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from '../utils/auth';
 import { TextInput, Button } from "react-materialize";
+import { MdPets } from "react-icons/md";
 // import { update } from "../../../server/models/Dog";
 
 const Login = (props) => {
@@ -45,8 +46,11 @@ const Login = (props) => {
 
     <div class="container" id="loginForm">
       <section>
-        <form onSubmit={handleFormSubmit}>
+        <div class="formHeader">
           <h2>Login</h2>
+          <MdPets size={80} />
+        </div>
+        <form onSubmit={handleFormSubmit}>
           <div>
             <input
               className="form-input"

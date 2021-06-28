@@ -41,7 +41,7 @@ function Signup(props) {
   return (
     <div class="container" id="signupForm">
       <section>
-        <div id="formHeader">
+        <div class="formHeader">
           <h2>Signup</h2>
           <MdPets size={80} />
         </div>
