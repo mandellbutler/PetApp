@@ -15,7 +15,7 @@ const ProfilePetItem = ({ pet }) => {
     <Card
       actions={[
         <a key="1" href="/adoption-page">Adopt Me!</a>,
-        <a key="1" href="/pet-profile">View My Profile!</a>
+       
       ]}
       closeIcon={<Icon>close</Icon>}
       header={<CardTitle image={pet.primary_photo_cropped ? pet.primary_photo_cropped.full : "/images/dog.jpg"}>{pet.name}</CardTitle>}
