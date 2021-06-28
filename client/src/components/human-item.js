@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col, Card, Icon, CardTitle} from 'react-materialize';
+import {Row, Col, Card, Icon, CardTitle, Button} from 'react-materialize';
 import luis from '../assets/luis.png'
 
 // Issue item accepts a single issue as a prop
@@ -25,7 +25,86 @@ const ProfilePetItem = ({ pet }) => {
         <div>{pet.bio}</div>
     
     </Card>
+
+
+  </Col>,
+  <Row>
+  <Col
+    m={12}
+    s={12}
+    className="center-align"
+  >
+    <Card
+      actions={[
+        <Button
+        href="/pet-profile"
+        node="a"
+        waves="light"
+        className="deep-orange accent-2 valign-center"
+      >
+        View My Profile!
+      </Button>
+      ]}
+      className="white"
+      closeIcon={<Icon>close</Icon>}
+      revealIcon={<Icon>more_vert</Icon>}
+      textClassName="dark-text"
+      title="steve"
+    >
+       BullDog
+    </Card>
+  </Col>,
+  <Col
+    m={12}
+    s={12}
+    className="center-align"
+  >
+    <Card
+      actions={[
+        <Button
+        href="/pet-profile"
+        node="a"
+        waves="light"
+        className="deep-orange accent-2 valign-center"
+      >
+        View My Profile!
+      </Button>
+      ]}
+      className="white"
+      closeIcon={<Icon>close</Icon>}
+      revealIcon={<Icon>more_vert</Icon>}
+      textClassName="dark-text"
+      title="Jack"
+    >
+       siamese cat
+    </Card>
+  </Col>,
+  <Col
+    m={12}
+    s={12}
+    className="center-align"
+  >
+    <Card
+      actions={[
+        <Button
+        href="/pet-profile"
+        node="a"
+        waves="light"
+        className="deep-orange accent-2 valign-center"
+      >
+        View My Profile!
+      </Button>
+      ]}
+      className="white"
+      closeIcon={<Icon>close</Icon>}
+      revealIcon={<Icon>more_vert</Icon>}
+      textClassName="dark-text"
+      title="Hawa"
+    >
+      yellow lab
+    </Card>
   </Col>
+</Row>
 </Row>
   )
 };
