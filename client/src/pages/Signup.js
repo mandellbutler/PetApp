@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_HUMANS } from '../utils/mutations';
-import {TextInput, Button} from 'react-materialize';
+import { TextInput, Button } from 'react-materialize';
 import 'materialize-css';
 
 function Signup(props) {
@@ -36,56 +36,48 @@ function Signup(props) {
   };
 
   return (
-    <div>
-      <div>
-          <Button
-    href="/login"
-    node="a"
-    waves="light"
-    className="deep-orange accent-2"
-      >
-        Back to Login
-    </Button>
-
-    </div>
-      {/* <Link to="/login">← Go to Login</Link> */}
-
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
+    <div class="container" id="signupForm">
+      <section>
+        <h2>Signup</h2>
+        <form onSubmit={handleFormSubmit}>
+          <div>
+            <label htmlFor="name">Name:</label>
+            <TextInput
+              placeholder="Name"
+              name="name"
+              type="firstName"
+              id="firstName TextInput-4"
+              onChange={handleChange}
+            />
+          </div>
+          <div >
+            <label htmlFor="email">Email:</label>
+            <input
+              placeholder="youremail@test.com"
+              name="email"
+              type="email"
+              id="email"
+              onChange={handleChange}
+            />
+          </div>
+          <div >
+            <label htmlFor="pwd">Password:</label>
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Button type="submit" className="deep-orange accent-2 valign-center" onClick={() => dispatch({ type: ADD_HUMANS })}>Signup</Button>
+          </div>
+        </form>
         <div>
-          <label htmlFor="name">Name:</label>
-          <TextInput
-            placeholder="Name"
-            name="name"
-            type="firstName"
-            id="firstName TextInput-4"
-            onChange={handleChange}
-          />
+          <p>Already a member? <a href="/login">Login</a></p>
         </div>
-        <div >
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div >
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <Button type="submit" className="deep-orange accent-2 valign-center" onClick={() => dispatch({ type: ADD_HUMANS })}>Signup</Button>
-          </div>   
-      </form>
+      </section>
     </div>
   );
 }
