@@ -18,6 +18,7 @@ function HumanProfile() {
       location: 'NYC'
 
     },
+    
 
   ]
   // pets state with starting data
