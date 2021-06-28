@@ -88,17 +88,18 @@ function HumanProfile() {
   const initialPets = [
     {
       name: 'steve',
-      description: 'definitely not a dog',
+      breed: 'BullDog',
+      age: 9,
+      description: 'I am a 9 year old french bulldog looking for a new loving home',
       primary_photo_cropped: {
         full: "/images/steve.jpg"
-      }
-    },
-    {
-      name: 'jack',
-      description: 'definitely not a cat',
-    },
-    
+      },
 
+      humanName: 'Luis',
+      bio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppy with me ',
+      location: 'NYC'
+
+    },
 
   ]
   // pets state with starting data

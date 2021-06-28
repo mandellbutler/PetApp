@@ -1,50 +1,119 @@
+
+
+// import React, { useState } from 'react';
+
+// // Import useGlobalContext hook
+// import { useGlobalContext } from '../context/GlobalContext';
+// import {Col, Card, Icon, CardTitle} from 'react-materialize';
+
+
+// export default function PetList() {
+//   // Assign student related variables from our custom hook
+//   const { pets, addPet, removePet, breeds } = useGlobalContext();
+
+//   const [newPetName, setnewPetName] = useState('');
+//   const [newPetBreed, setnewPetBreed] = useState('');
+
+//   return (
+//     <div>
+//       {pets ? (
+//         <>
+//           <section className="pet-list">
+            
+
+             
+//                 {pets.map((pet) => (
+
+                  
+// <Col s={12} m={7}>
+//        <Card>
+//          <div className="card-image"> 
+//           <img src={pet.image} alt="pet-profile-pic" /> 
+//            <span className="card-title">{pet.name}</span>
+//          </div>
+//         <div className="card-content">
+//              <h3>My name is {pet.name}, welcome to me profile!</h3>
+//              <p>Breed:{pet.breed}</p>
+//            <p>Location:{pet.location}</p>
+//          </div>
+//          <div className="card-action"> 
+//             <a href="#">This is a link</a> 
+//           </div>
+//        </Card>
+//      </Col> 
+//                 ))}
+          
+           
+
+//             <div className="add-student">
+//               <input
+//                 onChange={(e) => setnewPetName(e.target.value)}
+//                 placeholder="New student name..."
+//                 type="text"
+//                 value={newPetName}
+//               />
+
+//               <select
+//                 onChange={(e) => setnewPetBreed(e.target.value)}
+//                 value={newPetBreed}
+//               >
+//                 <option>Choose breed...</option>
+//                 {breeds.map((breed) => (
+//                   <option key={breed} value={breed}>
+//                     {breed}
+//                   </option>
+//                 ))}
+//               </select>
+
+//               <button
+//                 type="button"
+//                 onClick={() => {
+//                   addPet({ name: newPetName, breed: newPetBreed });
+//                   setnewPetBreed('');
+//                   setnewPetName('');
+//                 }}
+//               >
+//                 Add Pet
+//               </button>
+//             </div>
+//           </section>
+//         </>
+//       ) : (
+//        <span></span>
+//       )}
+//     </div>
+//   );
+// }
 // import React from "react";
 // import 'materialize-css';
-// import {Row, Col, Card, Icon, CardTitle} from 'react-materialize';
+// import {Row, Col, Card, Icon, CardTitle } from 'react-materialize';
+
 
 
 // // import Auth from "../utils/auth";
 // import { useQuery, } from "@apollo/react-hooks";
-// import { QUERY_petS } from "../utils/queries";
+// import { QUERY_HUMANS } from "../utils/queries";
+// import { QUERY_DOGS } from "../utils/queries";
+// import {ADD_DOGS} from "../utils/mutations"
 
-// const SavedPets = () => {
-  
-//   const { data } = useQuery(QUERY_petS);
-// //   const userData = data?.me || {};
+// const SavedHuman = () => {
 
-
-//     // const [state, dispatch] = useGlobelContext();
-
+//   // human information
+//   const { data } = useQuery(QUERY_HUMANS);
+//   console.log("Query Data: ", data)
+//   const { dogData } = useQuery(QUERY_DOGS);
+//   const {addDogs} = useQuery(ADD_DOGS);
+//   // const userData = data?.me || {};
 
 
 
 //   return (
 //     <>
-//  {/* userdata.savedpets  */}
-// <Row>
-// {/* {state.human.pets.map((pet) => { */}
-//     {data.human.pets.map((pet) => {
+    
 
+//     <Row>
+// {data.SavedHuman.map((human) => {
 //             return (
-// <Col s={12} m={7}>
-//       <Card>
-//         <div className="card-image"> 
-//          <img src={pet.image} alt="pet-profile-pic" /> 
-//           <span className="card-title">{pet.name}</span>
-//         </div>
-//         <div className="card-content">
-//             <h3>My name is {pet.name}, welcome to me profile!</h3>
-//             <p>Breed:{pet.breed}</p>
-//           <p>Location:{pet.location}</p>
-//         </div>
-//         <div className="card-action"> 
-//            <a href="#">This is a link</a> 
-//          </div>
-//       </Card>
-//     </Col> 
-//     );
-//             })}; 
-//  </Row> 
 // <Row>
 //   <Col
 //     m={6}
@@ -55,102 +124,82 @@
 //         <a key="1" href="#">This is a Link</a>
 //       ]}
 //       closeIcon={<Icon>close</Icon>}
-
-//       header={<CardTitle image="https://materializecss.com/images/sample-1.jpg">Card Title</CardTitle>}
-
+//       header={<CardTitle image="https://materializecss.com/images/sample-1.jpg">{human.name}</CardTitle>}
 //       revealIcon={<Icon>more_vert</Icon>}
 //     >
 //       Here is the standard card with an image thumbnail.
 //     </Card>
 //   </Col>
 // </Row>
-// </>
+//     );
+//             })};
+// </Row>
+
+//       <Row>
+//         {dogData.savedPets.map((dog) => {
+//           return (
+//             <Col s={12} m={7}>
+//               <Card>
+//                 <div className="card-image">
+//                   {/* <img src={dog.image} alt="pet-profile-pic" /> */}
+//                   <span className="card-title">{dog.name}</span>
+//                 </div>
+//                 <div className="card-content">
+//                   <p>{dog.location}</p>
+//                 </div>
+//                 <div className="card-action">
+//                   <a href="pet-profile">Visit my Profile!</a>
+//                 </div>
+//               </Card>
+//             </Col>
+//           );
+//         })};
+// </Row>
+
+//     </>
 //   );
 // };
 
-// export default SavedPets;
+// export default SavedHuman;
 
-import React, { useState } from 'react';
-
-// Import useGlobalContext hook
+import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
-import {Col, Card, Icon, CardTitle} from 'react-materialize';
+import PetList from '../components/profile-pet-list';
+import HumanProfile from '/HumanProfile';
+import {Button} from 'react-materialize';
 
 
-export default function PetList() {
-  // Assign student related variables from our custom hook
-  const { pets, addPet, removePet, breeds } = useGlobalContext();
+function PetProfile() {
+  // const [state, dispatch] = useGlobalContext();
+  // Starting pets
+  const initialPets = [
+    {
+      name: 'steve',
+      breed: 'BullDog',
+      age: 9,
+      description: 'I am a 9 year old french bulldog looking for a new loving home',
+      primary_photo_cropped: {
+        full: "/images/steve.jpg"
+      },
 
-  const [newPetName, setnewPetName] = useState('');
-  const [newPetBreed, setnewPetBreed] = useState('');
+      humanName: 'Luis',
+      bio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppy with me ',
+      location: 'NYC'
+
+    },
+
+  ]
+  // pets state with starting data
+  const [pets, setPets] = useState(initialPets);
 
   return (
     <div>
-      {pets ? (
-        <>
-          <section className="pet-list">
-            
+       
 
-             
-                {pets.map((pet) => (
+      <PetList pets={pets}></PetList>
 
-                  
-<Col s={12} m={7}>
-       <Card>
-         <div className="card-image"> 
-          <img src={pet.image} alt="pet-profile-pic" /> 
-           <span className="card-title">{pet.name}</span>
-         </div>
-        <div className="card-content">
-             <h3>My name is {pet.name}, welcome to me profile!</h3>
-             <p>Breed:{pet.breed}</p>
-           <p>Location:{pet.location}</p>
-         </div>
-         <div className="card-action"> 
-            <a href="#">This is a link</a> 
-          </div>
-       </Card>
-     </Col> 
-                ))}
-          
-           
-
-            <div className="add-student">
-              <input
-                onChange={(e) => setnewPetName(e.target.value)}
-                placeholder="New student name..."
-                type="text"
-                value={newPetName}
-              />
-
-              <select
-                onChange={(e) => setnewPetBreed(e.target.value)}
-                value={newPetBreed}
-              >
-                <option>Choose breed...</option>
-                {breeds.map((breed) => (
-                  <option key={breed} value={breed}>
-                    {breed}
-                  </option>
-                ))}
-              </select>
-
-              <button
-                type="button"
-                onClick={() => {
-                  addPet({ name: newPetName, breed: newPetBreed });
-                  setnewPetBreed('');
-                  setnewPetName('');
-                }}
-              >
-                Add Pet
-              </button>
-            </div>
-          </section>
-        </>
-      ) : (
-       <span></span>
-      )}
     </div>
-  );
+  )
 }
+
+export default PetProfile

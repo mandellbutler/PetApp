@@ -13,7 +13,7 @@ const ProfilePetList = ({ pets }) => {
     //     <p>Name: {pet.name},  Description: {pet.description}</p>
     // </div>;
     return (
-      <Col m={6} s={12} key={index}>
+      <Col m={12} s={12} key={index}>
       <IssueItem pet={pet}></IssueItem>
       </Col>
     )
