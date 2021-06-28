@@ -22,10 +22,10 @@ const ProfilePetItem = ({ pet }) => {
       revealIcon={<Icon>more_vert</Icon>}
     >
         <div>
-        {pet.breed}
+        Breed: {pet.breed}
         </div>
         <div>
-        {pet.age}
+        Age: {pet.age}
         </div>
         <div>
         {pet.description}
