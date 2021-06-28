@@ -37,7 +37,7 @@ const Home = () =>{
   <Row>
   <Col
     m={6}
-    s={12}
+    offset-s={12}
     className="center-align"
   >
     <Card
@@ -46,7 +46,7 @@ const Home = () =>{
         href="/adoption-page"
         node="a"
         waves="light"
-        className="deep-orange accent-2 valign-center center-align"
+        className="deep-orange accent-2 valign-center"
       >
         Adopt a Pet Today!
       </Button>
