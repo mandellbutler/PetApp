@@ -6,6 +6,9 @@ import Auth from '../utils/auth';
 import { ADD_HUMANS } from '../utils/mutations';
 import { TextInput, Button } from 'react-materialize';
 import 'materialize-css';
+import { MdPets } from "react-icons/md";
+
+
 
 function Signup(props) {
   const [formState, setFormState] = useState({ name: '', email: '', password: '' });
@@ -38,7 +41,10 @@ function Signup(props) {
   return (
     <div class="container" id="signupForm">
       <section>
-        <h2>Signup</h2>
+        <div id="formHeader">
+          <h2>Signup</h2>
+          <MdPets size={80} />
+        </div>
         <form onSubmit={handleFormSubmit}>
           <div>
             <label htmlFor="name">Name:</label>
