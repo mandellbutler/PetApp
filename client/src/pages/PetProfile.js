@@ -1,71 +1,151 @@
-import React from "react";
-import 'materialize-css';
-import {Row, Col, Card, Icon, CardTitle} from 'react-materialize';
+// import React from "react";
+// import 'materialize-css';
+// import {Row, Col, Card, Icon, CardTitle} from 'react-materialize';
 
 
-// import Auth from "../utils/auth";
-import { useQuery, } from "@apollo/react-hooks";
-import { QUERY_DOGS } from "../utils/queries";
+// // import Auth from "../utils/auth";
+// import { useQuery, } from "@apollo/react-hooks";
+// import { QUERY_DOGS } from "../utils/queries";
 
-const SavedPets = () => {
+// const SavedPets = () => {
   
-  const { data } = useQuery(QUERY_DOGS);
-//   const userData = data?.me || {};
+//   const { data } = useQuery(QUERY_DOGS);
+// //   const userData = data?.me || {};
 
 
-    // const [state, dispatch] = useGlobelContext();
+//     // const [state, dispatch] = useGlobelContext();
 
 
 
 
-  return (
-    <>
- {/* userdata.savedpets  */}
-<Row>
-{/* {state.human.dogs.map((dog) => { */}
-    {data.human.dogs.map((dog) => {
+//   return (
+//     <>
+//  {/* userdata.savedpets  */}
+// <Row>
+// {/* {state.human.dogs.map((dog) => { */}
+//     {data.human.dogs.map((dog) => {
 
-            return (
-<Col s={12} m={7}>
-      <Card>
-        <div className="card-image"> 
-         <img src={dog.image} alt="pet-profile-pic" /> 
-          <span className="card-title">{dog.name}</span>
-        </div>
-        <div className="card-content">
-            <h3>My name is {dog.name}, welcome to me profile!</h3>
-            <p>Breed:{dog.breed}</p>
-          <p>Location:{dog.location}</p>
-        </div>
-        <div className="card-action"> 
-           <a href="#">This is a link</a> 
-         </div>
-      </Card>
-    </Col> 
-    );
-            })}; 
- </Row> 
-<Row>
-  <Col
-    m={6}
-    s={12}
-  >
-    <Card
-      actions={[
-        <a key="1" href="#">This is a Link</a>
-      ]}
-      closeIcon={<Icon>close</Icon>}
+//             return (
+// <Col s={12} m={7}>
+//       <Card>
+//         <div className="card-image"> 
+//          <img src={dog.image} alt="pet-profile-pic" /> 
+//           <span className="card-title">{dog.name}</span>
+//         </div>
+//         <div className="card-content">
+//             <h3>My name is {dog.name}, welcome to me profile!</h3>
+//             <p>Breed:{dog.breed}</p>
+//           <p>Location:{dog.location}</p>
+//         </div>
+//         <div className="card-action"> 
+//            <a href="#">This is a link</a> 
+//          </div>
+//       </Card>
+//     </Col> 
+//     );
+//             })}; 
+//  </Row> 
+// <Row>
+//   <Col
+//     m={6}
+//     s={12}
+//   >
+//     <Card
+//       actions={[
+//         <a key="1" href="#">This is a Link</a>
+//       ]}
+//       closeIcon={<Icon>close</Icon>}
 
-      header={<CardTitle image="https://materializecss.com/images/sample-1.jpg">Card Title</CardTitle>}
+//       header={<CardTitle image="https://materializecss.com/images/sample-1.jpg">Card Title</CardTitle>}
 
-      revealIcon={<Icon>more_vert</Icon>}
-    >
-      Here is the standard card with an image thumbnail.
-    </Card>
-  </Col>
-</Row>
-</>
+//       revealIcon={<Icon>more_vert</Icon>}
+//     >
+//       Here is the standard card with an image thumbnail.
+//     </Card>
+//   </Col>
+// </Row>
+// </>
+//   );
+// };
+
+// export default SavedPets;
+
+import React, { useState } from 'react';
+import { LOGIN, LOGOUT } from '../context/actions';
+import { useGlobalContext } from '../context/GlobalContext';
+import {Row, Col, Card} from 'react-materialize';
+import 'materialize-css';
+
+
+export default function AccountDisplay() {
+  const [state, dispatch] = useGlobalContext();
+  // const [newName, setNewName] = useState(state.name);
+  // const [updatingName, setUpdatingName] = useState(false);
+  // const [dogs, setDogs] = useState(state.name)
+
+  // const toggleUpdateName = () => {
+  //   setUpdatingName(!updatingName);
+  // };
+
+  // const handleInputSubmit = () => {
+  //   dispatch({
+  //     type: LOGIN,
+  //     name: newName,
+  //   });
+  //   setUpdatingName(!updatingName);
+  // };
+
+  // const handleInputChange = (e) => {
+  //   setNewName(e.target.value);
+  // };
+  const { dogs, human } = useGlobalContext();
+
+    return (
+      <>
+        <Row>
+          
+   {state.human.dogs.map((dog) => (
+           
+  <Col s={12} m={7}>
+        <Card>
+          <div className="card-image"> 
+           <img src={dog.image} alt="pet-profile-pic" /> 
+            <span className="card-title">{dog.name}</span>
+          </div>
+          <div className="card-content">
+              <h3>My name is {dog.name}, welcome to me profile!</h3>
+              <p>Breed:{dog.breed}</p>
+            <p>Location:{dog.location}</p>
+          </div>
+          <div className="card-action"> 
+             <a href="#">This is a link</a> 
+           </div>
+        </Card>
+      </Col> 
+     
+   ))}
+  
+  </Row>
+  
+
+  
+        
+        
+      ) : (
+        <h1>Welcome! Please log in!</h1>
+      )
+      <button
+        onClick={() =>
+          dispatch({
+            type: LOGOUT,
+            isLoggedIn: state.isLoggedIn,
+          })
+        }
+      >
+        {state.isLoggedIn ? 'Log out' : 'Log in'}
+      </button>
+    </>
   );
-};
+}
 
-export default SavedPets;
+
