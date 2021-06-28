@@ -165,7 +165,6 @@
 import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
 import PetList from '../components/profile-pet-list';
-import HumanProfile from '/HumanProfile';
 import {Button} from 'react-materialize';
 
 
@@ -183,7 +182,7 @@ function PetProfile() {
       },
 
       humanName: 'Luis',
-      bio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppy with me ',
+      humanBio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppies with me ',
       location: 'NYC'
 
     },

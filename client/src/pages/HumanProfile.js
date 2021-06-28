@@ -78,7 +78,7 @@
 
 import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
-import PetList from '../components/profile-pet-list';
+import HumanList from '../components/human-list';
 import {Button} from 'react-materialize';
 
 
@@ -109,7 +109,7 @@ function HumanProfile() {
     <div>
        
 
-      <PetList pets={pets}></PetList>
+      <HumanList pets={pets}></HumanList>
 
     </div>
   )
