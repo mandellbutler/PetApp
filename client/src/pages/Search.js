@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
 import PetList from '../components/PetList';
 // require('dotenv').config();
-// import { TextInput } from 'react-materialize';
+import { TextInput, Button } from 'react-materialize';
 import { formStyle, galleryStyle } from '../utils/style'
 
 
@@ -59,10 +59,10 @@ function Search() {
     switch (event.target.name) {
       case "location":
         // Do this
-        setParams(prevState => ({...prevState, location: event.target.value}))
+        setParams(prevState => ({ ...prevState, location: event.target.value }))
         break;
       case "breed":
-        setParams(prevState => ({...prevState, breed: event.target.value}))
+        setParams(prevState => ({ ...prevState, breed: event.target.value }))
         break;
       default:
         return;
@@ -73,8 +73,8 @@ function Search() {
   const getPets = async () => {
     const serverData = await fetch('/api/pets', {
       method: 'POST',
-      headers:{
-        "accepts":"application/json"
+      headers: {
+        "accepts": "application/json"
       },
       body: JSON.stringify(params)
     })
@@ -129,18 +129,20 @@ function Search() {
 
   return (
     <div>
-        <div style={formStyle}>
-          {/* <form onSubmit={handleSubmit}/> */}
+      <div style={formStyle}>
+        {/* <form onSubmit={handleSubmit}/> */}
+        <div class="container" id="searchForm">
           <h2>Fetch Friends By:</h2>
           <label for="location">Location:</label><br></br>
-          <input type="text" id="location" name="location" value={params.location} onChange={handleInput}/><br></br>
+          <input type="text" id="location" name="location" value={params.location} onChange={handleInput} /><br></br>
           <label for="breed">Breed:</label><br></br>
-          <input type="text" id="breed" name="breed" value={params.breed} onChange={handleInput}/><br></br>
-          <button onClick={()=>getPets()}>Fetch Friends!</button>
+          <input type="text" id="breed" name="breed" value={params.breed} onChange={handleInput} /><br></br>
+          <Button type="submit" className="deep-orange accent-2 valign-center" onClick={() => getPets()}>Fetch Friends!</Button>
         </div>
-        <div style={galleryStyle}>
-          <PetList pets={pets}></PetList>
-        </div>
+      </div>
+      <div style={galleryStyle}>
+        <PetList pets={pets}></PetList>
+      </div>
 
     </div>
   )
