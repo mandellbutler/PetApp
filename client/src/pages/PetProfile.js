@@ -5,11 +5,11 @@
 
 // // import Auth from "../utils/auth";
 // import { useQuery, } from "@apollo/react-hooks";
-// import { QUERY_DOGS } from "../utils/queries";
+// import { QUERY_petS } from "../utils/queries";
 
 // const SavedPets = () => {
   
-//   const { data } = useQuery(QUERY_DOGS);
+//   const { data } = useQuery(QUERY_petS);
 // //   const userData = data?.me || {};
 
 
@@ -22,20 +22,20 @@
 //     <>
 //  {/* userdata.savedpets  */}
 // <Row>
-// {/* {state.human.dogs.map((dog) => { */}
-//     {data.human.dogs.map((dog) => {
+// {/* {state.human.pets.map((pet) => { */}
+//     {data.human.pets.map((pet) => {
 
 //             return (
 // <Col s={12} m={7}>
 //       <Card>
 //         <div className="card-image"> 
-//          <img src={dog.image} alt="pet-profile-pic" /> 
-//           <span className="card-title">{dog.name}</span>
+//          <img src={pet.image} alt="pet-profile-pic" /> 
+//           <span className="card-title">{pet.name}</span>
 //         </div>
 //         <div className="card-content">
-//             <h3>My name is {dog.name}, welcome to me profile!</h3>
-//             <p>Breed:{dog.breed}</p>
-//           <p>Location:{dog.location}</p>
+//             <h3>My name is {pet.name}, welcome to me profile!</h3>
+//             <p>Breed:{pet.breed}</p>
+//           <p>Location:{pet.location}</p>
 //         </div>
 //         <div className="card-action"> 
 //            <a href="#">This is a link</a> 
@@ -71,81 +71,86 @@
 // export default SavedPets;
 
 import React, { useState } from 'react';
-import { LOGIN, LOGOUT } from '../context/actions';
+
+// Import useGlobalContext hook
 import { useGlobalContext } from '../context/GlobalContext';
-import {Row, Col, Card} from 'react-materialize';
-import 'materialize-css';
+import {Col, Card, Icon, CardTitle} from 'react-materialize';
 
 
-export default function AccountDisplay() {
-  const [state, dispatch] = useGlobalContext();
-  // const [newName, setNewName] = useState(state.name);
-  // const [updatingName, setUpdatingName] = useState(false);
-  // const [dogs, setDogs] = useState(state.name)
+export default function PetList() {
+  // Assign student related variables from our custom hook
+  const { pets, addPet, removePet, breeds } = useGlobalContext();
 
-  // const toggleUpdateName = () => {
-  //   setUpdatingName(!updatingName);
-  // };
+  const [newPetName, setnewPetName] = useState('');
+  const [newPetBreed, setnewPetBreed] = useState('');
 
-  // const handleInputSubmit = () => {
-  //   dispatch({
-  //     type: LOGIN,
-  //     name: newName,
-  //   });
-  //   setUpdatingName(!updatingName);
-  // };
+  return (
+    <div>
+      {pets ? (
+        <>
+          <section className="pet-list">
+            
 
-  // const handleInputChange = (e) => {
-  //   setNewName(e.target.value);
-  // };
-  const { dogs, human } = useGlobalContext();
+             
+                {pets.map((pet) => (
 
-    return (
-      <>
-        <Row>
+                  
+<Col s={12} m={7}>
+       <Card>
+         <div className="card-image"> 
+          <img src={pet.image} alt="pet-profile-pic" /> 
+           <span className="card-title">{pet.name}</span>
+         </div>
+        <div className="card-content">
+             <h3>My name is {pet.name}, welcome to me profile!</h3>
+             <p>Breed:{pet.breed}</p>
+           <p>Location:{pet.location}</p>
+         </div>
+         <div className="card-action"> 
+            <a href="#">This is a link</a> 
+          </div>
+       </Card>
+     </Col> 
+                ))}
           
-   {state.human.dogs.map((dog) => (
            
-  <Col s={12} m={7}>
-        <Card>
-          <div className="card-image"> 
-           <img src={dog.image} alt="pet-profile-pic" /> 
-            <span className="card-title">{dog.name}</span>
-          </div>
-          <div className="card-content">
-              <h3>My name is {dog.name}, welcome to me profile!</h3>
-              <p>Breed:{dog.breed}</p>
-            <p>Location:{dog.location}</p>
-          </div>
-          <div className="card-action"> 
-             <a href="#">This is a link</a> 
-           </div>
-        </Card>
-      </Col> 
-     
-   ))}
-  
-  </Row>
-  
 
-  
-        
-        
+            <div className="add-student">
+              <input
+                onChange={(e) => setnewPetName(e.target.value)}
+                placeholder="New student name..."
+                type="text"
+                value={newPetName}
+              />
+
+              <select
+                onChange={(e) => setnewPetBreed(e.target.value)}
+                value={newPetBreed}
+              >
+                <option>Choose breed...</option>
+                {breeds.map((breed) => (
+                  <option key={breed} value={breed}>
+                    {breed}
+                  </option>
+                ))}
+              </select>
+
+              <button
+                type="button"
+                onClick={() => {
+                  addPet({ name: newPetName, breed: newPetBreed });
+                  setnewPetBreed('');
+                  setnewPetName('');
+                }}
+              >
+                Add Pet
+              </button>
+            </div>
+          </section>
+        </>
       ) : (
-        <h1>Welcome! Please log in!</h1>
-      )
-      <button
-        onClick={() =>
-          dispatch({
-            type: LOGOUT,
-            isLoggedIn: state.isLoggedIn,
-          })
-        }
-      >
-        {state.isLoggedIn ? 'Log out' : 'Log in'}
-      </button>
-    </>
+       <span></span>
+      )}
+    </div>
   );
 }
-
-
