@@ -79,37 +79,32 @@
 import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
 import HumanList from '../components/human-list';
+// import PetProfile from './PetProfile';
 import {Button} from 'react-materialize';
 
 
 function HumanProfile() {
   // const [state, dispatch] = useGlobalContext();
   // Starting pets
-  const initialPets = [
-    {
-      name: 'steve',
-      breed: 'BullDog',
-      age: 9,
-      description: 'I am a 9 year old french bulldog looking for a new loving home',
-      primary_photo_cropped: {
-        full: "/images/steve.jpg"
-      },
+  const initialHuman = [
 
+    {
       humanName: 'Luis',
-      bio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppy with me ',
+      bio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppies with me ',
       location: 'NYC'
 
     },
 
   ]
   // pets state with starting data
-  const [pets, setPets] = useState(initialPets);
+  const [pets, setPets] = useState(initialHuman);
 
   return (
     <div>
        
 
       <HumanList pets={pets}></HumanList>
+      {/* <PetProfile pets={pets}></PetProfile> */}
 
     </div>
   )

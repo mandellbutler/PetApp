@@ -164,7 +164,8 @@
 
 import React, { useState } from "react";
 import { useGlobalContext } from '../context/GlobalContext';
-import PetList from '../components/profile-pet-list';
+// import PetList from '../components/profile-pet-list';
+import PetList from '../components/petprofile-pet-list';
 import {Button} from 'react-materialize';
 
 
@@ -179,13 +180,30 @@ function PetProfile() {
       description: 'I am a 9 year old french bulldog looking for a new loving home',
       primary_photo_cropped: {
         full: "/images/steve.jpg"
+      }
+    },
+      {
+        name: 'jack',
+        breed: 'siamese cat',
+        age: 12,
+        description: 'definitely not a cat',
+      },
+      {
+        name: 'hawa',
+        breed:'yellow lab',
+        age:2,
+        description: 'please adopt me',
+        primary_photo_cropped: {
+          full: "/images/hawa.jpg"
+        }
+      },
+      {
+        humanName: 'Luis',
+        bio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppies with me ',
+        location: 'NYC'
+  
       },
 
-      humanName: 'Luis',
-      humanBio: 'I am a 32 year old in the NYC area moving to Madrid but I am not able to take my puppies with me ',
-      location: 'NYC'
-
-    },
 
   ]
   // pets state with starting data
