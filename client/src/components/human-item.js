@@ -19,10 +19,15 @@ const ProfilePetItem = ({ pet }) => {
       header={<CardTitle image={luis}></CardTitle>}
       revealIcon={<Icon>more_vert</Icon>}
     >
-        <div>
+        <h4>
+            {pet.humanName}
+        </h4>
+        <h6>
         {pet.location}
+        </h6>
+        <div>{pet.bio}
         </div>
-        <div>{pet.bio}</div>
+        
     
     </Card>
 
