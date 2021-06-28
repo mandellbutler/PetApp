@@ -2,6 +2,7 @@ import React, { useContext, createContext, useReducer } from "react";
 import {
   LOGIN,
   LOGOUT,
+  ADD_PET,
   // ADOPTSUBMIT
 } from "./actions";
 
@@ -25,6 +26,16 @@ const reducer = (state, action) => {
         ...state,
         loggedIn: false
       }
+        case ADD_PET: {
+          const newPetId = state.pets[state.pets.length - 1].id + 1;
+    
+          const newPet = { ...action.payload, id: newPetId };
+    
+          return {
+            ...state,
+            pets: [...state.pets, newPet],
+          };
+        }
     default:
       return state
   }
