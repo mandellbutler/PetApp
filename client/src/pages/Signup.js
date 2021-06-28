@@ -7,6 +7,7 @@ import { ADD_HUMANS } from '../utils/mutations';
 import { TextInput, Button } from 'react-materialize';
 import 'materialize-css';
 import { MdPets } from "react-icons/md";
+import { formStyle } from '../utils/style'
 
 
 

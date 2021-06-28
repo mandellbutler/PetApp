@@ -37,6 +37,7 @@
   }
 }
 
+/* login and sign up forms */
 #loginAlert {
   font-size: 2rem;
 }
@@ -54,4 +55,14 @@
 .formHeader {
   display: flex;
   justify-content: space-between;
+}
+
+/* search form */
+#searchForm {
+  border: solid grey 1px;
+  padding: 10px;
+  margin-top: 10%;
+  min-width: 40%;
+  width: 80%;
+  /* box-shadow: 2px 2px 1em grey; */
 }
