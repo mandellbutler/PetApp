@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Navbar from './NavBar';
 import Signup from '../pages/Signup';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'materialize-css';
 // import { useGlobalContext } from "../context/GlobalContext";
 
 
@@ -30,7 +31,13 @@ const UnauthenticatedApp = () => {
             <Route exact path='/search' component={Search} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
-            <Route render={() => <p className='display-2'>Sorry! You must be logged in to see this page :(</p>} />
+            <Route render={() =>
+              <div class="container center-align">
+                <img class="circle responsive-img" alt="" src="../images/security.png"></img>
+                <p id="loginAlert" class="flow-text" className='display-2'>
+                  Sorry! You must <a href="/signup">login</a> to view this page.
+                </p>
+              </div>} />
           </Switch>
         </>
       </Router>
