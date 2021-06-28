@@ -6,7 +6,7 @@ import luis from '../assets/luis.png'
 // This component is responsible for displaying the specific information for a given issue
 const ProfilePetItem = ({ pet }) => {
   return (
-    
+   <div class= "human-profile">
     <Row>
   <Col
     m={12}
@@ -106,6 +106,7 @@ const ProfilePetItem = ({ pet }) => {
   </Col>
 </Row>
 </Row>
+</div>
   )
 };
 
